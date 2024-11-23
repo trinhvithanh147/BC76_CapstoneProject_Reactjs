@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import './adminTemplate.scss'
+import React, { useEffect, useState } from "react";
+import "./adminTemplate.scss";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -8,57 +8,64 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
-import Sider from 'antd/es/layout/Sider';
-import { Content, Header } from 'antd/es/layout/layout';
+import Sider from "antd/es/layout/Sider";
+import { Content, Header } from "antd/es/layout/layout";
 import Icon from "../../components/Icon";
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { pathDefault } from '../../common/path';
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { pathDefault } from "../../common/path";
 
 const AdminTemplate = () => {
-    const location = useLocation()
-    console.log(location)
-     const [collapsed, setCollapsed] = useState(false);
-     const {
-       token: { colorBgContainer, borderRadiusLG },
-     } = theme.useToken();
+  const location = useLocation();
+  console.log(location);
+  const [collapsed, setCollapsed] = useState(false);
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
 
-     useEffect(()=>{
-      // kiểm tra xem người dùng có đăng nhập chưa
-       const dataString = localStorage.getItem('userInfo')
-      if(!dataString){
-        // nếu chưa đăng nhập thì chuyển hướng về trang login
-        window.location.href = pathDefault.signIn
-      }else{
-        // kiểm tra xem role có phải là admin hay không
-        const data = JSON.parse(dataString) //cho nó thành 1 chuỗi để so sánh
-        if(data.user.role !== "ADMIN"){
-          window.location.href = pathDefault.homePage
-        }
+  useEffect(() => {
+    // kiểm tra xem người dùng có đăng nhập chưa
+    const dataString = localStorage.getItem("userInfo");
+    if (!dataString) {
+      // nếu chưa đăng nhập thì chuyển hướng về trang login
+      window.location.href = pathDefault.adminLogin;
+    } else {
+      // kiểm tra xem role có phải là admin hay không
+      const data = JSON.parse(dataString); //cho nó thành 1 chuỗi để so sánh
+      if (data.user.role !== "ADMIN") {
+        window.location.href = pathDefault.homePage;
       }
-     },[])
+    }
+  }, []);
   return (
-    <Layout className="min-h-screen">
+    <Layout className="h-screen">
       <Sider
-        width={250}
-        className="bg-orange-300 sider-content"
         trigger={null}
         collapsible
         collapsed={collapsed}
+        className="pt-5 px-4 !max-w-[300px] !min-w-[300px] sider-content"
+        // style={{
+        //   width: "300px",
+        //   minWidth: "300px",
+        //   maxWidth: "300px",
+        // }}
       >
-        <div className="demo-logo-vertical h-20 flex items-center justify-center">
-          <Icon.logo />
+        <div className="demo-logo-vertical flex items-center justify-center p-2 mb-4">
+          <NavLink to={pathDefault.homePage}>
+            <Icon.logo fill="white" />
+          </NavLink>
         </div>
+
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
           items={[
             {
               key: "1",
               label: (
                 <NavLink
+                  to={pathDefault.managerUser}
                   className={({ isActive, isPending }) => {
-                    return `px-3 rounded-md inline-block ${
+                    return `px-3 rounded-md w-full inline-block ${
                       isActive ||
                       location.pathname == "/admin" ||
                       location.pathname == "/admin/"
@@ -66,7 +73,6 @@ const AdminTemplate = () => {
                         : ""
                     }`;
                   }}
-                  to={pathDefault.managerUser}
                 >
                   <UserOutlined />
                   <span>Danh sách người dùng</span>
@@ -77,16 +83,12 @@ const AdminTemplate = () => {
               key: "2",
               label: (
                 <NavLink
+                  to={pathDefault.managerJob}
                   className={({ isActive, isPending }) => {
-                    return `px-3 rounded-md inline-block ${
-                      isActive ||
-                      location.pathname == "/admin" ||
-                      location.pathname == "/admin/"
-                        ? "item-active"
-                        : ""
+                    return `px-3 rounded-md w-full inline-block ${
+                      isActive ? "item-active" : ""
                     }`;
                   }}
-                  to={pathDefault.managerJob}
                 >
                   <VideoCameraOutlined />
                   <span>Danh sách công việc</span>
@@ -97,18 +99,15 @@ const AdminTemplate = () => {
               key: "3",
               label: (
                 <NavLink
+                  to={pathDefault.managerComment}
                   className={({ isActive, isPending }) => {
-                    return `px-3 rounded-md inline-block ${
-                      isActive ||
-                      location.pathname == "/admin" ||
-                      location.pathname == "/admin/"
-                        ? "item-active"
-                        : ""
+                    console.log(isActive);
+                    return `px-3 rounded-md w-full inline-block ${
+                      isActive ? "item-active" : ""
                     }`;
                   }}
-                  to={pathDefault.managerComment}
                 >
-                <UploadOutlined />
+                  <UploadOutlined />
                   <span>Danh sách bình luận</span>
                 </NavLink>
               ),
@@ -148,6 +147,6 @@ const AdminTemplate = () => {
       </Layout>
     </Layout>
   );
-}
+};
 
-export default AdminTemplate
+export default AdminTemplate;

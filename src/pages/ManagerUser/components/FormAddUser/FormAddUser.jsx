@@ -7,35 +7,62 @@ import { skillService } from "../../../../services/skill.service";
 import { useFormik } from "formik";
 import { nguoiDungService } from "../../../../services/nguoiDung.service";
 import { NotificationContext } from "../../../../App";
+import * as Yup from "yup";
 
-const FormAddUser = ({handleCloseModal,layDanhSachNguoiDung}) => {
-  const handleNotification = useContext(NotificationContext)
+const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
+  const handleNotification = useContext(NotificationContext);
   const [listSkill, setListSkill] = useState([]);
-  const { handleChange, handleBlur, errors, touched, handleSubmit, values,setFieldValue } =
-    useFormik({
-      initialValues: {
-        id: 0,
-        name: "",
-        email: "",
-        password: "",
-        phone: "",
-        birthday: "",
-        gender: true,
-        role: "",
-        skill: [],
-        certification: [],
-      },
-      onSubmit: (values) => {
-        console.log(values);
-        nguoiDungService.themNguoiDung(values).then((res)=>{
-            console.log(res)
-            handleCloseModal()
-            layDanhSachNguoiDung();
-            handleNotification("success", "Thêm người dùng thành công");
+  const {
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+    handleSubmit,
+    values,
+    setFieldValue,
+  } = useFormik({
+    initialValues: {
+      id: 0,
+      name: "",
+      email: "",
+      password: "",
+      phone: "",
+      birthday: "",
+      gender: "",
+      role: "",
+      skill: [],
+      certification: [],
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Vui lòng không bỏ trống"),
+      email: Yup.string()
+        .required("Vui lòng không bỏ trống")
+        .email("Vui lòng nhập đúng định dạng email"),
+      password: Yup.string().required("Vui lòng không bỏ trống"),
+      phone: Yup.string()
+        .required("Vui lòng không bỏ trống")
+        .matches(
+          /^(03\d|05\d|07\d|08\d|09\d)\d{7}$/,
+          "Vui lòng nhập đúng định dạng số điện thoại Việt Nam"
+        ),
+      role: Yup.string().required("Vui lòng chọn một chọn một chức vụ"),
+      gender: Yup.string().required("Vui lòng chọn một chọn giới tính"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+      nguoiDungService
+        .themNguoiDung(values)
+        .then((res) => {
+          console.log(res);
+          handleCloseModal();
+          layDanhSachNguoiDung();
+          handleNotification("success", "Thêm người dùng thành công");
         })
-        .catch((err)=>{console.log(err)})
-      },
-    });
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  });
   useEffect(() => {
     skillService
       .layDanhSachSkill()
@@ -117,11 +144,15 @@ const FormAddUser = ({handleCloseModal,layDanhSachNguoiDung}) => {
           <label className="font-medium mb-1 block" htmlFor="">
             Ngày sinh
           </label>
-          <DatePicker onChange={(date,dateString)=>{
-            console.log(dateString)
-            setFieldValue("birthday",dateString);
-            console.log(date)
-          }} format="DD-MM-YYYY" className="w-full" />
+          <DatePicker
+            onChange={(date, dateString) => {
+              console.log(dateString);
+              setFieldValue("birthday", dateString);
+              console.log(date);
+            }}
+            format="DD-MM-YYYY"
+            className="w-full"
+          />
         </div>
         <SelectCustom
           handleChange={(value, option) => {

@@ -12,6 +12,7 @@ const InputSearch = ({
 }) => {
   return (
     <Input.Search
+    
     onSearch={handleSearch}
       onKeyDown={handleKeyDown}
       onClick={handleClick}

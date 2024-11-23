@@ -8,6 +8,7 @@ import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
 import ManagerDetailJob from "./pages/ManagerDetailJob/ManagerDetailJob";
 import DetailJob from "./templates/HomeTemplate/components/DetailJob";
 import DetailJobId from "./templates/HomeTemplate/components/DetailJobId";
+import HomePage from "./pages/HomePage/HomePage";
 
 
 export const NotificationContext = createContext()
@@ -24,13 +25,19 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
    {
      path: pathDefault.homePage,
      element: <HomeTemplate />,
+     children: [
+      {
+        path: pathDefault.homePage,
+        element: <HomePage/>
+      }
+     ]
    },
    {
-     path: "detail/:slug",
+     path: "search-job/:slug",
      element: <DetailJob />,
    },
    {
-     path: "detail/:slug/:id",
+     path: "search-job/:slug/:id",
      element: <DetailJobId />,
    },
    {
@@ -73,6 +80,7 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
            </Suspense>
          ),
        },
+
      ],
    },
  ];

@@ -16,6 +16,8 @@ import { Dropdown } from "antd";
 import "./headerTemplate.scss";
 import useViewPort from "../../../hooks/useViewPort";
 
+
+
 const HeaderTemplete = () => {
   const { width } = useViewPort();
   const [keyword, setKeyword] = useState("");
@@ -24,14 +26,14 @@ const HeaderTemplete = () => {
   const [listSearch, setListSearch] = useState([]);
   const { user } = useSelector((state) => state.userSlice);
   const navigate = useNavigate();
- const [showInput, setShowInput] = useState(false);
-  const handleSearch = (keyword) =>{
+  const [showInput, setShowInput] = useState(false);
+  const handleSearch = (keyword) => {
     setOpenDropdown(false);
-    navigate(`/detail/${keyword}`);
+    navigate(`/search-job/${keyword}`);
   }
   const handleItemClick = (itemId) => {
     setOpenDropdown(false);
-    navigate(`/detail/${value}/${itemId}`); 
+    navigate(`/search-job/${value}/${itemId}`);
   };
 
   const handleChangeKeyword = (event) => {
@@ -42,10 +44,10 @@ const HeaderTemplete = () => {
     setOpenDropdown(true);
   };
 
- 
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      navigate(`/detail/${keyword}`);
+      navigate(`/search-job/${keyword}`);
     }
   };
 
@@ -62,18 +64,18 @@ const HeaderTemplete = () => {
           console.log(err);
         });
     }
-    
-  }, [value]);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setShowInput(window.scrollY > 100);handleScroll
-  //   };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  }, [value]);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowInput(window.scrollY > 100)
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const itemListSearch = useMemo(() => {
     return listSearch.slice(0, 4).map((item) => {
@@ -102,17 +104,17 @@ const HeaderTemplete = () => {
   }, [listSearch]);
 
   return (
-    <header>
+    <header className="fixed w-full top-0 left-0">
       <div className="container py-4 border-b border-b-gray-200">
         <div className="header_content flex items-center justify-between">
           <div className="flex flex-1 space-x-2 items-center">
-            {/* Logo */}
-            <Link to={pathDefault.homePage}>
+             {/* Logo */}
+           <Link to={pathDefault.homePage} className="min-w-[121px] h-atuo mt-1">
               <Icon.logo />
             </Link>
-            {width > 576 && (
-              // showInput && 
+            {width > 576 && ( 
               <Dropdown
+                className={`${showInput ? "opacity-100 ":"opacity-0"}  transition-all duration-500`}
                 trigger={["click"]}
                 overlayClassName="dropdown-suggest"
                 open={openDropdown}
@@ -137,14 +139,83 @@ const HeaderTemplete = () => {
             )}
           </div>
 
-          <div className="header_action space-x-3 inline-block">
-            <DropdownHeader buttonContent="Fiverr Pro" />
-            <DropdownHeader buttonContent="Explore" />
+          <div className="header_action space-x-1 inline-block z-50">
+            <DropdownHeader width={"408px"} buttonContent="Fiverr Pro" item={[
+              {
+                key: 1,
+                label: <Link className="grid grid-cols-10 border py-3 px-4  rounded-md hover:text-red-500" >
+                  <div className="col-span-2  flex justify-center items-center">
+                    <Icon.kinhLup width={48} height={48} />
+                  </div>
+                  <div className="col-span-7 ">
+                    <div className="font-semibold text-[#404145]">I'm looking to hire</div>
+                    <div className="text-sm">My team needs vetted freelance talent and a premium business solution.</div>
+                  </div>
+                  </Link>
+              },
+              {
+                key: 2,
+                label: <Link className="grid grid-cols-10 border py-3 px-4 rounded-md" >
+                  <div className="col-span-2  flex justify-center items-center">
+                    <Icon.tayCamBut width={48} height={48} />
+                  </div>
+                  <div className="col-span-7">
+                    <div className="font-semibold text-[#404145]">I want to offer Pro services</div>
+                    <div className="text-sm">I'd like to work on business projects as a Pro freelancer or agency.</div>
+                  </div>
+                </Link>
+              }
+            ]} />
+            <DropdownHeader buttonContent="Explore" item={[
+              {
+                key: 1,
+                label: <Link >
+                  <span className="font-semibold text-[#404145] block">Answers</span>
+                  <span className="text-sm">Powered by AI, answered by Fiverr freelancers</span>
+                </Link>
+              },{
+                key: 2,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Community</span>
+                  <span className="text-sm">Connect with Fiverr's team and community</span>
+                </Link>
+              },{
+                key: 3,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Guides</span>
+                  <span className="text-sm">In-depth guides covering business topics</span>
+                </Link>
+              },{
+                key: 4,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Podcast</span>
+                  <span className="text-sm">Inside tips from top business minds</span>
+                </Link>
+              },{
+                key: 5,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Learn</span>
+                  <span className="text-sm">Professional online courses, led by experts</span>
+                </Link>
+              },{
+                key: 6,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Blog</span>
+                  <span className="text-sm">News, information and community stories</span>
+                </Link>
+              },{
+                key: 7,
+                label: <Link>
+                  <span className="font-semibold text-[#404145] block">Logo Maker</span>
+                  <span className="text-sm">Create your logo instantly</span>
+                </Link>
+              }
+            ]} />
             <ButtonGhost content={"English"} icon={<GlobalOutlined />} />
-            <ButtonGhost content={"Become Seller"} />
+            <ButtonGhost content={"Become a Seller"} />
             {!user ? (
               <>
-                <ButtonGhost content={"Sign in"} />
+                <ButtonGhost   content={"Sign in"} />
                 <ButtonOutline
                   onClick={() => {
                     navigate(pathDefault.signIn);
@@ -157,8 +228,9 @@ const HeaderTemplete = () => {
             )}
           </div>
         </div>
+        
       </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      
     </header>
   );
 };

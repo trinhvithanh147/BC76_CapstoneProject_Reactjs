@@ -9,6 +9,7 @@ import HappenFreelance from './components/HappenFreelance';
 import TryFiverr from './components/TryFiverr';
 import GuidesGrow from './components/GuidesGrow';
 import Fingertips from './components/Fingertips';
+import MadeFiverr from './components/MadeFiverr';
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <VideoFiverr/>
       <HappenFreelance/>
       <TryFiverr/>
+      <MadeFiverr/>
       <GuidesGrow/>
       <Fingertips/>
     </>

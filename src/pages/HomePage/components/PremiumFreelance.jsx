@@ -70,7 +70,7 @@ const PremiumFreelance = () => {
                 </div>
               </div>
               <div className="flex justify-start">
-                <Link className="py-[10px] px-[20px] text-[16px] bg-[#222325] text-white rounded-lg border-transparent font-semibold">
+                <Link className="transition-all duration-75 py-[10px] px-[20px] text-[16px] bg-[#222325] text-white rounded-lg border-transparent font-semibold hover:bg-[#404145] hover:text-white">
                   Try Now
                 </Link>
               </div>

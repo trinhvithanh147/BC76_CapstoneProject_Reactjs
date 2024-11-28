@@ -117,9 +117,8 @@ const HeaderTemplete = () => {
             </Link>
             {width > 576 && (
               <Dropdown
-                className={`${
-                  showInput ? "opacity-100 " : "opacity-0"
-                }  transition-all duration-500`}
+                className={`${showInput ? "opacity-100 " : "opacity-0"
+                  }  transition-all duration-500`}
                 trigger={["click"]}
                 overlayClassName="dropdown-suggest"
                 open={openDropdown}
@@ -144,7 +143,6 @@ const HeaderTemplete = () => {
               </Dropdown>
             )}
           </div>
-
           <div className="header_action space-x-1 inline-block z-50">
             <DropdownHeader
               width={"408px"}
@@ -202,7 +200,7 @@ const HeaderTemplete = () => {
                       </span>
                       <span className="text-sm">
                         Powered by AI, answered by Fiverr freelancers
-                        
+
                       </span>
                     </Link>
                   ),
@@ -304,11 +302,11 @@ const HeaderTemplete = () => {
             )}
           </div>
         </div>
-        
+
       </div>
-      
+
     </header>
-    
+
   );
 };
 

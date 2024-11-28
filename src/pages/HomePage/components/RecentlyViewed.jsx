@@ -88,7 +88,7 @@ const RecentlyViewed = () => {
                 </div>
                 <Link
                   href=""
-                  className="inline-block mt-[5px] pt-[8px] tenCongViec hover:underline"
+                  className="inline-block mt-[5px] pt-[8px] tenCongViec hover:underline w-[full]"
                 >
                   {item.congViec.tenCongViec}
                 </Link>

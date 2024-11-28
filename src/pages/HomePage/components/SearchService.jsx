@@ -138,36 +138,22 @@ const SearchService = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <div className="grid grid-cols-9 p-3 gap-3">
-            <MenuJob
-              icon={<Icon.programming />}
-              content={"Programming & Tech"}
-            />
-            <MenuJob
-              icon={<Icon.graphic />}
-              content={"Graphics & Design"}
-            />
-            <MenuJob
-              icon={<Icon.digital />}
-              content={"Digital Marketing"}
-            />
-            <MenuJob
-              icon={<Icon.translate />}
-              content={"Writing & Translation"}
-            />
-            <MenuJob
-              icon={<Icon.video />}
-              content={"Video & Animation"}
-            />
-            <MenuJob icon={<Icon.ai_services />} content={"AI Services"} />
-            <MenuJob icon={<Icon.music_audio />} content={"Music & Audio"} />
-            <MenuJob icon={<Icon.business />} content={"Business"} />
-            <MenuJob icon={<Icon.consulting />} content={"Consulting"} />
-          </div>
+      <section className="container">
+        <div className="grid grid-cols-9 p-3 gap-3 ">
+          <MenuJob icon={<Icon.programming />} content={"Programming & Tech"} />
+          <MenuJob icon={<Icon.graphic />} content={"Graphics & Design"} />
+          <MenuJob icon={<Icon.digital />} content={"Digital Marketing"} />
+          <MenuJob
+            icon={<Icon.translate />}
+            content={"Writing & Translation"}
+          />
+          <MenuJob icon={<Icon.video />} content={"Video & Animation"} />
+          <MenuJob icon={<Icon.ai_services />} content={"AI Services"} />
+          <MenuJob icon={<Icon.music_audio />} content={"Music & Audio"} />
+          <MenuJob icon={<Icon.business />} content={"Business"} />
+          <MenuJob icon={<Icon.consulting />} content={"Consulting"} />
+          
         </div>
-        <Outlet/>
       </section>
     </>
   );

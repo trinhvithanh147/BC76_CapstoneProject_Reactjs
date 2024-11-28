@@ -1,8 +1,9 @@
 .searchService_content{
-    background-image: url(./../../../../public/hero-xl-x1.png);
+    background-image: url(./../../../../public/hero-xl-x1.webp);
     height: 500px;
-    object-fit: cover;
+    background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 16px;
 }
 .dropdown-suggest_2{
     max-width: 616px;

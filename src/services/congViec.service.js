@@ -13,5 +13,8 @@ export const congViecService = {
   layCongViecTheoChiTietLoai: (maChiTietLoai) =>{
     return http.get(`/cong-viec//lay-cong-viec-theo-chi-tiet-loai/${maChiTietLoai}`
     );
+  },
+  layMaCongViec: (id) =>{
+    return http.get(`/cong-viec/lay-cong-viec-chi-tiet/${id}`);
   }
 };

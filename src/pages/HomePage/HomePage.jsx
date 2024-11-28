@@ -1,16 +1,30 @@
 import React from 'react'
+import SearchService from './components/SearchService'
+import RecentlyViewed from './components/RecentlyViewed';
+import { Outlet } from 'react-router-dom';
+import PopularService from './components/PopularService';
+import PremiumFreelance from './components/PremiumFreelance';
+import VideoFiverr from './components/VideoFiverr';
+import HappenFreelance from './components/HappenFreelance';
+import TryFiverr from './components/TryFiverr';
+import GuidesGrow from './components/GuidesGrow';
+import Fingertips from './components/Fingertips';
 
 const HomePage = () => {
   return (
-    <div>
-        111
-        <div className="h-screen">
+    <>
+      <SearchService />
+      <RecentlyViewed/>
+      <PopularService/>
+      <PremiumFreelance/>
+      <VideoFiverr/>
+      <HappenFreelance/>
+      <TryFiverr/>
+      <GuidesGrow/>
+      <Fingertips/>
+    </>
+  );
 
-    </div><div className="h-screen">
-
-</div></div>
-
-  )
 }
 
 export default HomePage

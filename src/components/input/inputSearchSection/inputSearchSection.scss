@@ -1,0 +1,28 @@
+.inputSearchSection{
+    position: relative;
+    input{
+
+        &:focus{
+            border: 1px solid #c5c6c9;
+            border-right-width: 1px;
+        }
+        &:hover{
+            border: 1px solid #c5c6c9;
+
+        }
+    }
+    button{
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        &:hover{
+            background-color: #126f43 !important;
+            border: 1px solid #126f43 !important;
+            color: white !important;
+        }
+        svg{
+        font-size: 18px;
+    }
+    }
+    
+}

@@ -9,6 +9,9 @@ import ManagerDetailJob from "./pages/ManagerDetailJob/ManagerDetailJob";
 import DetailJob from "./templates/HomeTemplate/components/DetailJob";
 import DetailJobId from "./templates/HomeTemplate/components/DetailJobId";
 import HomePage from "./pages/HomePage/HomePage";
+import SearchService from "./pages/HomePage/components/SearchService";
+import RecentlyViewed from "./pages/HomePage/components/RecentlyViewed";
+
 
 
 export const NotificationContext = createContext()
@@ -26,11 +29,12 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
      path: pathDefault.homePage,
      element: <HomeTemplate />,
      children: [
-      {
-        path: pathDefault.homePage,
-        element: <HomePage/>
-      }
-     ]
+       {
+         path: pathDefault.homePage,
+         element: <HomePage />,
+       },
+       
+     ],
    },
    {
      path: "search-job/:slug",
@@ -80,7 +84,6 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
            </Suspense>
          ),
        },
-
      ],
    },
  ];

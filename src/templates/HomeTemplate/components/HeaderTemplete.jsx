@@ -96,7 +96,7 @@ const HeaderTemplete = () => {
               <h4 className="text-lg font-semibold">
                 {item.congViec.tenCongViec}
               </h4>
-              <p className="mt-2">{item.congViec.danhGia}</p>
+              <p className="mt-2 mb-2">{item.congViec.danhGia}</p>
             </div>
           </div>
         ),

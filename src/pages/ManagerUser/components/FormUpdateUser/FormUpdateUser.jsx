@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import InputCustom from "../../../../components/input/inputCustom/InputCustom";
-import { DatePicker } from "antd";
-import SelectCustom from "../../../../components/select/selectCustom/SelectCustom";
-import { Button } from "antd";
-import { skillService } from "../../../../services/skill.service";
-import { useFormik } from "formik";
-import { nguoiDungService } from "../../../../services/nguoiDung.service";
 import { NotificationContext } from "../../../../App";
+import { useFormik } from "formik";
+import { skillService } from "../../../../services/skill.service";
+import InputCustom from "../../../../components/input/inputCustom/InputCustom";
+import SelectCustom from "../../../../components/select/selectCustom/SelectCustom";
+import { Button, DatePicker } from "antd";
 import * as Yup from "yup";
 import dayjs from "dayjs";
+import { nguoiDungService } from "../../../../services/nguoiDung.service";
 
-const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
+const FormUpdateUser = ({
+  handleCloseModal,
+  layDanhSachNguoiDung,
+  formData,
+}) => {
   const handleNotification = useContext(NotificationContext);
   const [listSkill, setListSkill] = useState([]);
   const {
@@ -28,7 +31,6 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
       id: 0,
       name: "",
       email: "",
-      password: "",
       phone: "",
       birthday: "",
       gender: "",
@@ -41,7 +43,6 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
       email: Yup.string()
         .required("Vui lòng không bỏ trống")
         .email("Vui lòng nhập đúng định dạng email"),
-      password: Yup.string().required("Vui lòng không bỏ trống"),
       phone: Yup.string()
         .required("Vui lòng không bỏ trống")
         .matches(
@@ -57,13 +58,13 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
     onSubmit: (values) => {
       console.log(values);
       nguoiDungService
-        .themNguoiDung(values)
+        .capNhatNguoiDung(values.id, values)
         .then((res) => {
           console.log(res);
           resetForm();
           handleCloseModal();
           layDanhSachNguoiDung();
-          handleNotification("success", "Thêm người dùng thành công");
+          handleNotification("success", "Cập nhật người dùng thành công");
         })
         .catch((err) => {
           console.log(err);
@@ -80,7 +81,22 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
         console.log(err);
       });
   }, []);
-
+  useEffect(() => {
+    if (formData) {
+      resetForm();
+      setValues({
+        id: formData.id || 0,
+        name: formData.name || "",
+        email: formData.email || "",
+        phone: formData.phone || "",
+        birthday: formData.birthday || "",
+        gender: formData.gender || "",
+        role: formData.role || "",
+        skill: formData.skill || [],
+        certification: formData.certification || [],
+      });
+    }
+  }, [formData]);
   return (
     <form onSubmit={handleSubmit} className="space-y-3" action="">
       <InputCustom
@@ -104,18 +120,6 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
         touched={touched.email}
         labelContent={"Email"}
         placeholder={"Vui lòng nhập email"}
-      />
-      <InputCustom
-        id="password"
-        name="password"
-        value={values.password}
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        error={errors.password}
-        touched={touched.password}
-        type="password"
-        labelContent={"Password"}
-        placeholder={"Vui lòng nhập password"}
       />
 
       <div className="grid grid-cols-2 gap-5">
@@ -223,11 +227,11 @@ const FormAddUser = ({ handleCloseModal, layDanhSachNguoiDung }) => {
           variant="solid"
           className="bg-black text-white "
         >
-          Xác nhận
+          Cập nhật
         </Button>
       </div>
     </form>
   );
 };
 
-export default FormAddUser;
+export default FormUpdateUser;

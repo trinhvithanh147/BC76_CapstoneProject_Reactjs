@@ -16,7 +16,6 @@ const InputCustom = ({
   return (
     <div>
       <label className="font-medium mb-1 inline-block" htmlFor={id}>
-        {" "}
         {labelContent}
       </label>
       <Input

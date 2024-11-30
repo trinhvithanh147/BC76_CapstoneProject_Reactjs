@@ -10,7 +10,9 @@ import * as Yup from "yup";
 import { authService } from "../../services/auth.service";
 import { NotificationContext } from "../../App";
 import { useDispatch } from "react-redux";
+import useViewPort from "../../hooks/useViewPort";
 const AdminLogin = () => {
+  const { width } = useViewPort();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleNotification = useContext(NotificationContext);
@@ -27,7 +29,6 @@ const AdminLogin = () => {
         password: Yup.string().required("Vui lòng không bỏ trống"),
       }),
       onSubmit: (values) => {
-        console.log(values);
         authService
           .signIn(values)
           .then((res) => {
@@ -37,8 +38,7 @@ const AdminLogin = () => {
                 "userInfo",
                 JSON.stringify(res.data.content)
               );
-              //   console.log(res.data.content.user);
-              //   dispatch(handleUpdateUser(res.data.content.user));
+              // dispatch(handleUpdateUser(res.data.content.user));
               handleNotification("success", "Đăng nhập thành công", 1500);
               setTimeout(() => {
                 navigate(pathDefault.admin);
@@ -52,19 +52,23 @@ const AdminLogin = () => {
       },
     });
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-1 lg:grid-cols-2 lg:bg-none bg-[url(/adminLogin.png)] bg-no-repeat bg-cover object-cover h-screen w-full">
       {/* LOGIN  */}
-      <div className="p-60">
+      <div className="flex flex-col items-center justify-center  text-white lg:text-black ">
         {/* LOGO & TITLE */}
         <div className="flex flex-col items-center justify-center space-y-3">
           <Link to={pathDefault.homePage}>
-            <Icon.logo />
+            <Icon.logo fill={width >= 1024 ? "black" : "white"} />
           </Link>
           <h1 className="font-bold text-xl">SIGN IN</h1>
         </div>
 
         {/* FORM  */}
-        <form action="" className="space-y-8" onSubmit={handleSubmit}>
+        <form
+          action=""
+          className="space-y-8 lg:w-full lg:px-40"
+          onSubmit={handleSubmit}
+        >
           <div>
             <InputCustom
               labelContent={"Email"}
@@ -95,7 +99,7 @@ const AdminLogin = () => {
           <div>
             <Button
               variant="solid"
-              className="bg-[#3A5B22] text-white w-full font-semibold"
+              className="bg-[#213A65] text-white w-full font-semibold"
               htmlType="submit"
             >
               Sign in
@@ -105,7 +109,7 @@ const AdminLogin = () => {
       </div>
 
       {/* RIGHT IMAGE  */}
-      <div>
+      <div className="hidden lg:block">
         <img
           src="/adminLogin.png"
           alt=""

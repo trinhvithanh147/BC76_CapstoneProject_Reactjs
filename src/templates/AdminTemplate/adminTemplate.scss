@@ -24,3 +24,19 @@
     background-color: #1677ff !important;
   }
 }
+
+/* Ghi đè các giá trị width của aside khi không thu gọn */
+.ant-layout-sider:not(.ant-layout-sider-collapsed) {
+  flex: unset !important;
+  max-width: unset !important;
+  min-width: unset !important;
+  width: unset !important;
+}
+
+/* Đảm bảo khi thu gọn, CSS gốc của Ant Design vẫn hoạt động */
+.ant-layout-sider-collapsed {
+  flex: 0 0 80px !important; /* Giá trị mặc định khi thu gọn */
+  max-width: 80px !important;
+  min-width: 80px !important;
+  width: 80px !important;
+}

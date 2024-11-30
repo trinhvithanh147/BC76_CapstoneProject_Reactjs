@@ -1,0 +1,32 @@
+
+.viewed_slider .slick-slide {
+  padding: 0 9px; 
+}
+.slick-slider .slick-arrow{
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #fff;
+    @apply shadow-lg;
+    &::before{
+        display: none;
+    }
+    span{
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      svg{
+        fill: rgb(98, 100, 106);
+      }
+
+    }
+
+}
+
+
+
+
+
+

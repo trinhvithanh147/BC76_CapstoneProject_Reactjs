@@ -1,0 +1,13 @@
+.guides_slide .slick-slide {
+  padding: 0 16px 0 0;
+}
+.guide_item{
+  img{
+    transition: opacity .3s ease-in-out;
+  }
+  &:hover{
+    img{
+      opacity: .85;
+    }
+  }
+}

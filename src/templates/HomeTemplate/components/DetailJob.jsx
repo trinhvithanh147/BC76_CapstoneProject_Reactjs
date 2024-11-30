@@ -20,10 +20,12 @@ const DetailJob = () => {
 
   const StarRating = ({ numOfStars }) => {
     return <Rate disabled defaultValue={numOfStars} />;
+
   };
 
   const showDanhMucCongViec = () => {
     return (
+      
       listDetailJob && (
         <div className="container  py-5">
           <div className="grid grid-cols-4 gap-4">
@@ -57,12 +59,15 @@ const DetailJob = () => {
                   <StarRating numOfStars={item.congViec.saoCongViec} />
                 </div>
                 <button className="rounded-md w-40 h-12 bg-red-500 text-white" onClick={()=>{
-                  navigate(`/detail/${param.slug}/${item.id}`);
+                  navigate(`/search-job/${param.slug}/${item.id}`);
                 }}>Xem chi tiết</button>
               </div>
             ))}
           </div>
         </div>
+        // {Array.from({length:5}).map((item,index)=>{
+        //   return soSao < index : saocomau ? sao kjong mau
+        // })}
       )
     );
   };

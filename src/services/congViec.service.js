@@ -15,6 +15,9 @@ export const congViecService = {
       `/cong-viec/lay-cong-viec-theo-chi-tiet-loai/${maChiTietLoai}`
     );
   },
+  layMaCongViec: (id) =>{
+    return http.get(`/cong-viec/lay-cong-viec-chi-tiet/${id}`);
+  },
   xoaCongViec: (id, token) => {
     return http.delete(`/cong-viec/${id}`, { headers: { token: token } });
   },
@@ -22,3 +25,4 @@ export const congViecService = {
     return http.post(`/cong-viec`, data, { headers: { token: token } });
   },
 };
+  

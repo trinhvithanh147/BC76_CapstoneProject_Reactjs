@@ -77,7 +77,6 @@ const SearchService = () => {
   return (
     <>
       <section>
-        <div className="pt-[115px]"></div>
         <div className="container ">
           <div className="searchService_content mb-4">
             <div className="searchService_item flex justify-center items-center flex-col w-full h-full relative ">

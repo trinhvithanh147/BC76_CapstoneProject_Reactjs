@@ -1,6 +1,6 @@
-export const ButtonGhost = ({content,icon,type="button"}) =>{
+export const ButtonGhost = ({content,icon,type="button", className}) =>{
     return (
-        <button type={type} className="py-2 px-4 hover:text-green-500 fill-[#62646a] text-[#62646a] font-semibold">{icon && <span className="mr-2 font-normal">{icon}</span> }{content}</button>
+        <button type={type} className={`py-2 px-4 hover:text-green-500 fill-[#62646a] text-[#62646a] font-semibold ${className}`}>{icon && <span className="mr-2 font-normal">{icon}</span> }{content}</button>
     ) 
 } 
 

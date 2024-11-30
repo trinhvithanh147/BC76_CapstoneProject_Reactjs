@@ -56,7 +56,7 @@ const RecentlyViewed = () => {
           {recentlyViewed.map((item, index) => {
             return (
               <div key={index} className="relative">
-                <Link className="hinhAnh">
+                <Link className="hinhAnh" >
                   <img
                     src={item.congViec.hinhAnh}
                     alt=""

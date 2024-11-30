@@ -6,7 +6,7 @@ import {
   ButtonGhost,
   ButtonOutline,
 } from "../../../components/button/ButtonCustom";
-import { GlobalOutlined } from "@ant-design/icons";
+import { BarsOutlined, GlobalOutlined } from "@ant-design/icons";
 import InputSearch from "../../../components/input/inputSearch/InputSearch";
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
@@ -24,6 +24,7 @@ const HeaderTemplete = () => {
   const [value] = useDebounce(keyword, 1000);
   const [openDropdown, setOpenDropdown] = useState(false);
   const [listSearch, setListSearch] = useState([]);
+  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
   const { user } = useSelector((state) => state.userSlice);
   const navigate = useNavigate();
   const [showInput, setShowInput] = useState(false);
@@ -104,21 +105,28 @@ const HeaderTemplete = () => {
   }, [listSearch]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-white py-4 border border-b-[e4e5e7]">
-        <div className="header_content container flex items-center justify-between ">
-          <div className="flex flex-1 space-x-2 items-center  ">
+    <header className="sticky top-0 left-0 w-full z-50">
+      <div className="bg-white py-4 border border-b-[e4e5e7] relative">
+        <div className="header_content container flex items-center justify-between px-4 lg:px-0">
+          <div className="block lg:hidden" onClick={() => {
+            setIsOpenNavbar(!isOpenNavbar)
+          }}>
+            <BarsOutlined style={{
+              fontSize: "30px"
+            }} />
+          </div>
+          <div className="flex lg:flex-1 space-x-2 items-center  ">
             {/* Logo */}
             <Link
               to={pathDefault.homePage}
-              className="min-w-[121px] h-atuo mt-1"
+              className="lg:min-w-[121px] h-atuo mt-1"
             >
               <Icon.logo />
             </Link>
             {width > 576 && (
               <Dropdown
                 className={`${showInput ? "opacity-100 " : "opacity-0"
-                  }  transition-all duration-500`}
+                  }  transition-all duration-500 hidden lg:block`}
                 trigger={["click"]}
                 overlayClassName="dropdown-suggest"
                 open={openDropdown}
@@ -143,10 +151,12 @@ const HeaderTemplete = () => {
               </Dropdown>
             )}
           </div>
-          <div className="header_action space-x-1 inline-block z-50">
+
+          <div className=" header_action space-x-1 flex z-50 items-center">
             <DropdownHeader
               width={"408px"}
               buttonContent="Fiverr Pro"
+              className="hidden lg:block"
               item={[
                 {
                   key: 1,
@@ -189,6 +199,7 @@ const HeaderTemplete = () => {
               ]}
             />
             <DropdownHeader
+              className="hidden lg:block"
               buttonContent="Explore"
               item={[
                 {
@@ -285,11 +296,11 @@ const HeaderTemplete = () => {
                 },
               ]}
             />
-            <ButtonGhost content={"English"} icon={<GlobalOutlined />} />
-            <ButtonGhost content={"Become a Seller"} />
+            <ButtonGhost className="hidden lg:block" content={"English"} icon={<GlobalOutlined />} />
+            <ButtonGhost className="hidden lg:block" content={"Become a Seller"} />
             {!user ? (
               <>
-                <ButtonGhost content={"SIgn In"} />
+                <ButtonGhost className="hidden lg:block" content={"SIgn In"} />
                 <ButtonOutline
                   onClick={() => {
                     navigate(pathDefault.signIn);
@@ -301,6 +312,10 @@ const HeaderTemplete = () => {
               <p className="inline-block">{user.name}</p>
             )}
           </div>
+
+        </div>
+        <div className={`h-screen bg-white   w-2/3 absolute -translate-x-full ${isOpenNavbar ? "translate-x-0 " : ""}`}>
+
         </div>
 
       </div>

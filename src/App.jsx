@@ -6,14 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import React, { createContext, Suspense } from "react";
 import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
 import ManagerDetailJob from "./pages/ManagerDetailJob/ManagerDetailJob";
-import DetailJob from "./templates/HomeTemplate/components/DetailJob";
-import DetailJobId from "./templates/HomeTemplate/components/DetailJobId";
 import HomePage from "./pages/HomePage/HomePage";
-import SearchService from "./pages/HomePage/components/SearchService";
-import RecentlyViewed from "./pages/HomePage/components/RecentlyViewed";
-
-
-
+import SearchJob from "./pages/SearchJob/SearchJob";
+import DetailProduct from "./pages/DetailProduct/DetailProduct";
 export const NotificationContext = createContext()
 
 const HomeTemplate = React.lazy(() =>
@@ -33,18 +28,19 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
          path: pathDefault.homePage,
          element: <HomePage />,
        },
+      {
+       path: "search-job/:slug",
+       element: <SearchJob/>,
+     },
+     {
+       path: "search-job/:slug/:id",
+       element: <DetailProduct />,
+     },
        
      ],
    },
    {
-     path: "search-job/:slug",
-     element: <DetailJob />,
-   },
-   {
-     path: "search-job/:slug/:id",
-     element: <DetailJobId />,
-   },
-   {
+   
      path: pathDefault.signIn,
      element: <SignIn />,
    },

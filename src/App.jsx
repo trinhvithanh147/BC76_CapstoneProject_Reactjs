@@ -1,24 +1,29 @@
-import { useRoutes } from "react-router-dom"
+import { useRoutes } from "react-router-dom";
 import { pathDefault } from "./common/path";
-import SignIn from './pages/signIn/SignIn';
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { createContext, Suspense } from "react";
 import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
-import ManagerDetailJob from "./pages/ManagerDetailJob/ManagerDetailJob";
+
 import HomePage from "./pages/HomePage/HomePage";
 import SearchJob from "./pages/SearchJob/SearchJob";
 import DetailProduct from "./pages/DetailProduct/DetailProduct";
+import SignIn from "./pages/signIn/SignIn";
+
 export const NotificationContext = createContext()
 
 const HomeTemplate = React.lazy(() =>
   import("./templates/HomeTemplate/HomeTemplate")
 );
+const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
 const ManagerJob = React.lazy(() => import("./pages/ManagerJob/ManagerJob"));
+// const ManagerDetailJob = React.lazy(() =>
+//   import("./pages/ManagerDetailJob/ManagerDetailJob")
+// );
+
 const ManagerComment = React.lazy(() =>
   import("./pages/ManagerComment/ManagerComment")
-);
-const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
+)
  const arrRoutes = [
    {
      path: pathDefault.homePage,
@@ -68,10 +73,7 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
            </Suspense>
          ),
        },
-       {
-         path: "manager-job/manager-detail-job/:id",
-         element: <ManagerDetailJob />,
-       },
+       
        {
          path: "manager-comment",
          element: (
@@ -84,8 +86,8 @@ const ManagerUser = React.lazy(() => import("./pages/ManagerUser/ManagerUser"));
    },
  ];
 function App() {
-  const routes  = useRoutes(arrRoutes)
-  const handleNotification = (type,content,timeClose = 3000) =>{
+  const routes = useRoutes(arrRoutes);
+  const handleNotification = (type, content, timeClose = 3000) => {
     toast[type](content, {
       position: "top-right",
       autoClose: timeClose,
@@ -98,7 +100,7 @@ function App() {
       transition: Bounce,
     });
     // toast.error || toast.success || toast.warning || toast.info
-  }
+  };
 
   return (
     <>
@@ -110,4 +112,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

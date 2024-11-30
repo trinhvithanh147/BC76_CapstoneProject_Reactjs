@@ -2,7 +2,7 @@ import { Dropdown } from 'antd';
 import "./searchService.scss";
 import { useEffect, useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
-import { Outlet, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { congViecService } from '../../../services/congViec.service';
 import Icon from '../../../components/Icon';
 import InputSearchSection from '../../../components/input/inputSearchSection/InputSearchSection';

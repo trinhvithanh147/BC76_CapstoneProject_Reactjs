@@ -17,7 +17,8 @@
     .ant-menu-item-active{
         background-color: unset !important;
         a{
-            @apply text-white bg-slate-500
+            @apply text-white bg-slate-500;
+            color: white;
         }
         
     }

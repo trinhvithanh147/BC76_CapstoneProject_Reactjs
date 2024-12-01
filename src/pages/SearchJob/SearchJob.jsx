@@ -105,7 +105,7 @@ const DetailJob = () => {
           <div className="p-10">
             <div className="flex flex-row">
               <img
-                src="./../../../public/Friendly-Seller-49-alpha.gif"
+                src="/Friendly-Seller-49-alpha.gif"
                 alt=""
                 className="mt-[-10px] mr-[16px] mb-auto ml-0 w-[48px]"
               />

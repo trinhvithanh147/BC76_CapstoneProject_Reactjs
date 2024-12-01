@@ -2,14 +2,15 @@ import { useRoutes } from "react-router-dom";
 import { pathDefault } from "./common/path";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import React, { createContext, Suspense } from "react";
+
+import AdminLogin from "./pages/AdminLogin/AdminLogin";
 import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
 
 import HomePage from "./pages/HomePage/HomePage";
 import SearchJob from "./pages/SearchJob/SearchJob";
 import DetailProduct from "./pages/DetailProduct/DetailProduct";
 import SignIn from "./pages/signIn/SignIn";
-
+import React, { createContext, Suspense } from "react";
 export const NotificationContext = createContext()
 
 const HomeTemplate = React.lazy(() =>
@@ -33,21 +34,23 @@ const ManagerComment = React.lazy(() =>
          path: pathDefault.homePage,
          element: <HomePage />,
        },
-      {
-       path: "search-job/:slug",
-       element: <SearchJob/>,
-     },
-     {
-       path: "search-job/:slug/:id",
-       element: <DetailProduct />,
-     },
-       
+       {
+         path: "search-job/:slug",
+         element: <SearchJob />,
+       },
+       {
+         path: "search-job/:slug/:id",
+         element: <DetailProduct />,
+       },
      ],
    },
    {
-   
      path: pathDefault.signIn,
      element: <SignIn />,
+   },
+   {
+     path: pathDefault.adminLogin,
+     element: <AdminLogin />,
    },
    {
      path: pathDefault.admin,
@@ -57,6 +60,7 @@ const ManagerComment = React.lazy(() =>
          index: true,
          element: <ManagerUser />,
        },
+
        {
          path: "manager-user",
          element: (
@@ -73,7 +77,7 @@ const ManagerComment = React.lazy(() =>
            </Suspense>
          ),
        },
-       
+
        {
          path: "manager-comment",
          element: (

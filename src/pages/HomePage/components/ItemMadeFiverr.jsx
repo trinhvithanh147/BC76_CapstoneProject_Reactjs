@@ -1,7 +1,7 @@
 
 import Icon from '../../../components/Icon'
 import { Link } from 'react-router-dom'
-const ItemMadeFiverr = ({ image, content, actor, order }) => {
+const itemMadeFiverr = ({ image, content, actor, order }) => {
     return (
         <div className={`w-[25%] order-${order} py-[12px] px-[8px] items-start `}>
             <div>
@@ -65,4 +65,4 @@ const ItemMadeFiverr = ({ image, content, actor, order }) => {
     )
 }
 
-export default ItemMadeFiverr
+export default itemMadeFiverr

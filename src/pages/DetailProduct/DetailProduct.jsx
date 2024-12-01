@@ -334,13 +334,13 @@ const DetailProduct = () => {
                     );
                   })}
                 </div>
+                <div className="mt-[32px]">
+                  <Link className="!border !border-[#222325]  hover:bg-[#f5f5f5] font-bold text-[#222325] inline-flex items-center text-[16px] py-[8px] px-[15px] leading-[24px]   rounded-lg  justify-center ">
+                    Show More Reviews
+                  </Link>
+                </div>
               </div>
             )}
-            <div className="mt-[32px]">
-              <Link className="border-[#222325] hover:bg-[#f5f5f5] font-bold text-[#222325] inline-flex items-center text-[16px] py-[8px] px-[15px] leading-[24px] border  rounded-lg  justify-center ">
-                Show More Reviews
-              </Link>
-            </div>
           </div>
         </div>
       </section>

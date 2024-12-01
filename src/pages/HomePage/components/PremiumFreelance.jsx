@@ -5,10 +5,10 @@ import { Button } from 'antd';
 
 const PremiumFreelance = () => {
     return (
-      <section className="container">
-        <div className="  bg-[#e8faf4] rounded-2xl py-[56px] pl-[80px] pr-[32px] ">
+      <section className="container overflow-hidden lg:px-0 px-6">
+        <div className="  bg-[#e8faf4] rounded-2xl lg:py-[56px] lg:pl-[80px] lg:pr-[32px] px-[24px] py-[32px] ">
           <div className="grid grid-cols-12 items-start flex-col">
-            <div className="col-span-6 ">
+            <div className="lg:col-span-6 col-span-12  ">
               <div className="mb-[32px]">
                 <Icon.fiverr_pro />
               </div>
@@ -19,9 +19,9 @@ const PremiumFreelance = () => {
                 </span>{" "}
                 freelance solution for businesses
               </h2>
-              <div className="grid grid-cols-2 gap-4 mb-[40px]">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mb-[40px]">
                 <div className="col-span-1">
-                  <div className="flex items-start gap-3 flex-col">
+                  <div className="flex items-start gap-3 lg:flex-col flex-row">
                     <Icon.tick />
                     <h6 className="text-[18px] leading-[25px] font-bold">
                       Dedicated hiring experts
@@ -33,7 +33,7 @@ const PremiumFreelance = () => {
                   </p>
                 </div>
                 <div className="col-span-1">
-                  <div className="flex items-start gap-3 flex-col">
+                  <div className="flex items-start gap-3 lg:flex-col flex-row">
                     <Icon.tick />
                     <h6 className="text-[18px] leading-[25px] font-bold">
                       Satisfaction guarantee
@@ -45,7 +45,7 @@ const PremiumFreelance = () => {
                   </p>
                 </div>
                 <div className="col-span-1">
-                  <div className="flex items-start gap-3 flex-col">
+                  <div className="flex items-start gap-3 lg:flex-col flex-row">
                     <Icon.tick />
                     <h6 className="text-[18px] leading-[25px] font-bold">
                       Advanced management tools
@@ -57,7 +57,7 @@ const PremiumFreelance = () => {
                   </p>
                 </div>
                 <div className="col-span-1">
-                  <div className="flex items-start gap-3 flex-col">
+                  <div className="flex items-start gap-3 lg:flex-col flex-row">
                     <Icon.tick />
                     <h6 className="text-[18px] leading-[25px] font-bold">
                       Flexible payment models
@@ -69,13 +69,13 @@ const PremiumFreelance = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-start">
-                <Link className="transition-all duration-75 py-[10px] px-[20px] text-[16px] bg-[#222325] text-white rounded-lg border-transparent font-semibold hover:bg-[#404145] hover:text-white">
+              <div className="flex lg:justify-start justify-center">
+                <Link className="transition-all duration-75 py-[10px] px-[20px] text-[16px] bg-[#222325] text-white rounded-lg border-transparent font-semibold hover:bg-[#404145] hover:text-white ">
                   Try Now
                 </Link>
               </div>
             </div>
-            <div className="col-span-6 h-full flex items-center justify-center  ">
+            <div className="lg:col-span-6 col-span-12  h-full flex items-center justify-center  hidden lg:block">
               <span>
                 <img
                   src="/fiverr-pro.png"

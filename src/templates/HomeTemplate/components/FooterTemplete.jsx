@@ -6,10 +6,10 @@ import { GlobalOutlined, GoldOutlined } from "@ant-design/icons";
 
 const FooterTemplete = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white overflow-hidden lg:px-0 px-6">
       <div className="container ">
         <div className="pt-[64px] pb-[24px] ">
-          <div className="grid grid-cols-5 footer_main mb-2">
+          <div className="grid lg:grid-cols-5 grid-cols-1 footer_main mb-2">
             <div className="col-span-1">
               <article className="pb-[40px]">
                 <div className="flex py-[20px]">
@@ -379,8 +379,8 @@ const FooterTemplete = () => {
             </div>
           </div>
 
-          <div className="bottom flex  justify-between flex-wrap items-center">
-            <div className="left flex w-auto flex-row items-center pt-4">
+          <div className="bottom flex justify-center  lg:justify-between flex-wrap items-center">
+            <div className="left flex  lg:flex-row flex-col items-center pt-4 ">
               <span>
                 <Icon.fiverFooter />
               </span>
@@ -390,8 +390,8 @@ const FooterTemplete = () => {
                 </span>
               </p>
             </div>
-            <div className="right flex items-center justify-between pt-[16px] w-auto">
-              <ul className="social flex items-center  w-auto pr-8 list-none">
+            <div className="right flex items-center lg:justify-between flex-col lg:flex-row justify-center pt-[16px]  w-auto">
+              <ul className="social flex items-center justify-center  w-auto lg:pr-8 list-none pr-0">
                 <li className="mr-6 p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.tiktok />

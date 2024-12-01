@@ -3,7 +3,7 @@ import Icon from '../../../components/Icon'
 import { Link } from 'react-router-dom'
 const ItemMadeFiverr = ({ image, content, actor, order }) => {
     return (
-        <div className={`w-[25%] order-${order} py-[12px] px-[8px] items-start `}>
+        <div className={`lg:w-[25%] w-[50%] order-${order} py-[12px] px-[8px] items-start `}>
             <div>
                 <div
                     className="relative item group"

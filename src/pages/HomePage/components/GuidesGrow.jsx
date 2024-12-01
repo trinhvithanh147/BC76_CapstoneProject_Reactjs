@@ -17,15 +17,48 @@ const GuidesGrow = () => {
     autoplaySpeed: 2000, // Thời gian giữa các lần chuyển slide (ms)
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomeNextArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
   return (
-    <section className="container">
+    <section className="container overflow-hidden lg:px-0 px-6">
       <div className="py-10">
         <div className="flex items-end justify-between">
           <h2 className="text-[48px] tracking-[-1.44px] leading-[105%] max-w-[720px]">
             Guides to help you grow
           </h2>
-          <Link className="text-[#222325] hover:underline">See more</Link>
+          <Link className="text-[#222325] hover:underline lg:block hidden">
+            See more
+          </Link>
         </div>
         <div className="guides_slide mt-[32px]">
           <Slider {...guidesSlide}>
@@ -42,6 +75,9 @@ const GuidesGrow = () => {
                   Start a side business
                 </h3>
               </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
+              </Link>
             </div>
             <div>
               <Link className="guide_item">
@@ -55,6 +91,9 @@ const GuidesGrow = () => {
                 <h3 className="text-[18px] leading-[140%] font-bold text-[#404145]">
                   Ecommerce business Ideas
                 </h3>
+              </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
               </Link>
             </div>
             <div>
@@ -70,6 +109,9 @@ const GuidesGrow = () => {
                   Start an online business and work from home
                 </h3>
               </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
+              </Link>
             </div>
             <div>
               <Link className="guide_item">
@@ -83,6 +125,9 @@ const GuidesGrow = () => {
                 <h3 className="text-[18px] leading-[140%] font-bold text-[#404145]">
                   Build a website from scratch
                 </h3>
+              </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
               </Link>
             </div>
             <div>
@@ -98,6 +143,9 @@ const GuidesGrow = () => {
                   Grow your business with AI
                 </h3>
               </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
+              </Link>
             </div>
             <div>
               <Link className="guide_item">
@@ -111,6 +159,9 @@ const GuidesGrow = () => {
                 <h3 className="text-[18px] leading-[140%] font-bold text-[#404145]">
                   Create a logo for your business
                 </h3>
+              </Link>
+              <Link className="text-[#222325] hover:underline lg:hidden block">
+                See more
               </Link>
             </div>
           </Slider>

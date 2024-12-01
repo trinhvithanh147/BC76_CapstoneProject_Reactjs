@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const TryFiverr = () => {
     return (
-      <section className="container">
+      <section className="container overflow-hidden lg:px-0 px-6">
         <div className="py-10">
-          <div className="flex rounded-xl bg-[#fff6f2] flex-row">
-            <div className="py-[56px] px-[80px] flex gap-10 flex-col flex-1 ">
+          <div className="flex rounded-xl bg-[#fff6f2] lg:flex-row flex-col py-10 lg:gap-0 gap-10">
+            <div className="lg:py-[56px] lg:px-[80px] flex lg:gap-10 gap-4 flex-col flex-1 lg:order-1 order-2  px-[24px]">
               <small>
                 <Icon.fiverlogomaker />
               </small>
-              <h2 className="text-[48px] leading-[100%] font-normal tracking-[-.96px]">
+              <h2 className="lg:text-[48px] text-[32px]  leading-[100%] font-normal tracking-[-.96px]">
                 Make an incredible
                 <br />
                 logo <span className="text-[#fc832b]">in seconds</span>
@@ -25,12 +25,8 @@ const TryFiverr = () => {
                 </Link>
               </span>
             </div>
-            <div className="flex py-[48px] px-[80px] justify-center items-center flex-1">
-              <img
-                src="/logo-maker-lohp.png"
-                alt=""
-                className="w-full"
-              />
+            <div className="flex lg:py-[48px] lg:px-[80px] justify-center items-center flex-1 lg:order-2 order-1 px-[24px]">
+              <img src="/logo-maker-lohp.png" alt="" className="w-full" />
             </div>
           </div>
         </div>

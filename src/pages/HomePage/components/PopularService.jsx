@@ -16,13 +16,43 @@ const PopularService = () => {
       slidesToScroll: 4, // Số slides cuộn mỗi lần
       autoplay: false, // Tự động chuyển slide
       autoplaySpeed: 2000, // Thời gian giữa các lần chuyển slide (ms)
-      prevArrow: <CustomPrevArrow/>,
-      nextArrow: <CustomeNextArrow/>,
-      
+      prevArrow: <CustomPrevArrow />,
+      nextArrow: <CustomeNextArrow />,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+      ],
     };
     return (
-      <section className="container py-[40px]">
-        <div className="flex flex-col gap-8 " >
+      <section className="container py-[40px] lg:px-0 px-6 ">
+        <div className="flex flex-col gap-8 ">
           <div className="title">
             <h2 className="text-[48px] leading-[105%] max-w-[720px] text-[#404145] font-normal">
               Popular services

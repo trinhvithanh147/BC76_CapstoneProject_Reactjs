@@ -21,6 +21,10 @@ export default {
       brightness: {
         110: "1.1",
       },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(180deg, #003912 36.72%, #19aa64 141.43%)",
+      },
     },
     container: {
       center: true,

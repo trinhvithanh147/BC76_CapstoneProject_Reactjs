@@ -6,7 +6,7 @@ import {
   ButtonGhost,
   ButtonOutline,
 } from "../../../components/button/ButtonCustom";
-import { BarsOutlined, DownOutlined, DragOutlined, GlobalOutlined } from "@ant-design/icons";
+import { BarsOutlined, DownOutlined, DragOutlined, GlobalOutlined, UserOutlined } from "@ant-design/icons";
 import InputSearch from "../../../components/input/inputSearch/InputSearch";
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
@@ -53,15 +53,28 @@ const HeaderTemplete = () => {
   };
 const items = [
   {
-    label: <a href="#">{user? user.name: "USER"}</a>,
+    label: (
+      <a href="# " className="text-[16px] font-normal">
+        <UserOutlined className="pr-2" />
+        {user ? user.name : "USER"}
+      </a>
+    ),
     key: "0",
   },
   {
-    label: <a href="#" onClick={() => {
+    label: (
+      <a
+        href="#"
+        className="text-[16px] font-normal"
+        onClick={() => {
           localStorage.removeItem("userInfo");
-          window.location.reload(); 
+          window.location.reload();
           navigate(pathDefault.homePage);
-        }}>Đăng xuất </a>,
+        }}
+      >
+        Sign out{" "}
+      </a>
+    ),
     key: "1",
   },
 ];
@@ -121,8 +134,8 @@ const items = [
     <header className="sticky top-0 left-0 w-full z-50">
       <div className="bg-white py-4 border border-b-[e4e5e7] relative">
         <div className="header_content container flex items-center justify-between px-4 lg:px-0">
-          <div
-            className="block lg:hidden"
+          <span
+            className="inline-block lg:hidden pt-2"
             onClick={() => {
               setIsOpenNavbar(!isOpenNavbar);
             }}
@@ -132,8 +145,8 @@ const items = [
                 fontSize: "30px",
               }}
             />
-          </div>
-          <div className="flex lg:flex-1 space-x-2 items-center  ">
+          </span>
+          <div className="flex lg:flex-1 space-x-2   ">
             {/* Logo */}
             <Link
               to={pathDefault.homePage}
@@ -341,8 +354,12 @@ const items = [
                   }}
                   trigger={["click"]}
                 >
-                  <a onClick={(e) => e.preventDefault()} className="cursor-pointer">
-                    Tài khoản
+                  <a
+                    onClick={(e) => e.preventDefault()}
+                    className="cursor-pointer text-[16px] text-[#62646a] font-semibold py-2 px-4"
+                  >
+                    
+                    Account
                     <DownOutlined />
                   </a>
                 </Dropdown>

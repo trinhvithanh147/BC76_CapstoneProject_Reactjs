@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const VideoFiverr = () => {
   return (
     <>
-      <section className="container ">
+      <section className="container overflow-hidden lg:px-0 px-6">
         <div className="py-[40px]">
           <div className="title">
             <div className=" text-[48px] leading-[105%]  tracking-[-1.44px] font-normal text-[#404145] mb-4">
@@ -17,7 +17,7 @@ const VideoFiverr = () => {
           </div>
           <div className="video-container  ">
             <video
-              className="w-full h-[598px] object-cover rounded-2xl"
+              className="w-full lg:h-[598px] object-cover rounded-2xl"
               muted
               autoPlay
               controls
@@ -31,12 +31,12 @@ const VideoFiverr = () => {
           </div>
         </div>
       </section>
-      <div className="container">
+      <div className="container lg:px-0 px-6">
         <h3 className="text-[28px] mb-[32px] text-[#222325] leading-[36px] font-normal">
           Vontélle's go-to services
         </h3>
         <div>
-          <div className="flex ">
+          <div className="flex lg:flex-row flex-col">
             <div className="min-w-fit py-[12px] px-[14px]">
               <Link
                 className="hover:!shadow-custom-hover min-w-[257px] h-[180px] bg-white  flex items-center flex-col gap-4 px-[16px] pt-[20px] pb-[16px] rounded-2xl"
@@ -45,10 +45,7 @@ const VideoFiverr = () => {
                     "0 0.14px 2.29266px rgba(0,0,0,0.032), 0 0.37px 4.42626px rgba(0,0,0,0.048), 0 3px 7px rgba(0,0,0,0.09)",
                 }}
               >
-                <img
-                  src="/3D-Industrial-Design_2x.png"
-                  alt=""
-                />
+                <img src="/3D-Industrial-Design_2x.png" alt="" />
                 <p>3D Industrial Design</p>
               </Link>
             </div>
@@ -60,10 +57,7 @@ const VideoFiverr = () => {
                     "0 0.14px 2.29266px rgba(0,0,0,0.032), 0 0.37px 4.42626px rgba(0,0,0,0.048), 0 3px 7px rgba(0,0,0,0.09)",
                 }}
               >
-                <img
-                  src="/E-commerce-Website-Development_2x.png"
-                  alt=""
-                />
+                <img src="/E-commerce-Website-Development_2x.png" alt="" />
                 <p className="text-center">
                   E-commerce <br />
                   Website Development

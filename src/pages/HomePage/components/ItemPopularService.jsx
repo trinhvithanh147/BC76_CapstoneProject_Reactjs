@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ItemPopularService = ({content,image,bgcolor}) => {
   return (
-    <div className="flex min-w-fit ">
+    <div className="lg:flex lg:min-w-fit ">
       <div
         className={`w-[200px] h-[266px] pt-[25px] pb-[6px] px-[6px] rounded-2xl mx-1 my-3 shadow-lg transition-all duration-500 hover:opacity-85`}
         style={{backgroundColor: bgcolor}}

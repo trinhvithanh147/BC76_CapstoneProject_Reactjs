@@ -18,10 +18,11 @@ const PopularService = () => {
       autoplaySpeed: 2000, // Thời gian giữa các lần chuyển slide (ms)
       prevArrow: <CustomPrevArrow/>,
       nextArrow: <CustomeNextArrow/>,
+      
     };
     return (
       <section className="container py-[40px]">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 " >
           <div className="title">
             <h2 className="text-[48px] leading-[105%] max-w-[720px] text-[#404145] font-normal">
               Popular services

@@ -1,5 +1,5 @@
 
-import ItemMadeFiverr from './itemMadeFiverr'
+import ItemMadeFiverr from './ItemMadeFiverr'
 
 const MadeFiverr = () => {
     return (

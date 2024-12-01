@@ -19,10 +19,6 @@ const DetailJob = () => {
       });
   }, [param.slug]);
 
-  const StarRating = ({ numOfStars }) => {
-    return <Rate disabled defaultValue={numOfStars} />;
-
-  };
 
   const showDanhMucCongViec = () => {
     return (
@@ -97,7 +93,39 @@ const DetailJob = () => {
     );
   };
 
-  return <div>{showDanhMucCongViec()}</div>;
+  return (
+    <>
+      <div className="container">
+        <div className="mt-[32px]">
+          <span className="text-[28px] text-[#222325] leading-[36px] font-normal ">
+            Results for <span className="font-bold">{param.slug}</span>
+          </span>
+        </div>
+        <div className="bg-[#fff7ee] rounded-xl mt-6">
+          <div className="p-10">
+            <div className="flex flex-row">
+              <img
+                src="./../../../public/Friendly-Seller-49-alpha.gif"
+                alt=""
+                className="mt-[-10px] mr-[16px] mb-auto ml-0 w-[48px]"
+              />
+              <div className="flex flex-col">
+                <h2 className="text-[24px] leading-[130%] font-bold text-[#222325]">
+                  Top freelancers for your first order
+                </h2>
+                <p className="text-[16px] text-[#404145] pt-[4px]">
+                  Discover sellers with a great track record at guiding new
+                  buyers.
+                </p>
+              </div>
+            </div>
+            <div>{showDanhMucCongViec()}</div>
+          </div>
+        </div>
+        ;
+      </div>
+    </>
+  );
 };
 
 export default DetailJob;

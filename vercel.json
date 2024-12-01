@@ -1,6 +1,3 @@
 { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
-export default {
-  base: '/',
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg', '**/*.webp'],
-};
+
 

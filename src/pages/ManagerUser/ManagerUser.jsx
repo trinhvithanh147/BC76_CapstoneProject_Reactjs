@@ -1,14 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { nguoiDungService } from '../../services/nguoiDung.service'
-import { Avatar, Button, Modal, Popconfirm, Table, Tag } from 'antd'
-import { NotificationContext } from '../../App'
-import FormAddUser from './components/FormAddUser/FormAddUser'
+import React, { useContext, useEffect, useState } from "react";
+import { nguoiDungService } from "../../services/nguoiDung.service";
+import { Avatar, Button, Modal, Popconfirm, Table, Tag } from "antd";
+import { NotificationContext } from "../../App";
+import FormAddUser from "./components/FormAddUser/FormAddUser";
+import FormUpdateUser from "./components/FormUpdateUser/FormUpdateUser";
+import useViewPort from "../../hooks/useViewPort";
 
 const ManagerUser = () => {
+  const { width } = useViewPort();
   const handleNotification = useContext(NotificationContext);
   const [listNguoiDung, setListNguoiDung] = useState([]);
-  
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpenUpdateModal, setIsOpenUpdateModal] = useState(false);
+  const [formData, setFormData] = useState(null);
   const layDanhSachNguoiDung = () => {
     nguoiDungService
       .layDanhSachNguoiDung()
@@ -18,9 +22,11 @@ const ManagerUser = () => {
       })
       .catch((err) => {
         console.log(err);
-
       });
-  }
+  };
+  useEffect(() => {
+    layDanhSachNguoiDung();
+  }, []);
   const columns = [
     {
       title: "ID",
@@ -70,7 +76,18 @@ const ManagerUser = () => {
       key: "5",
       render: (text, record, index) => {
         return (
-          <div className="space-x-3">
+          <div className="space-y-2 md:space-y-0 md:space-x-2 lg:space-x-3">
+            {/* NÚT SỬA  */}
+            <Button
+              className="border-yellow-500 text-yellow-500"
+              onClick={() => {
+                setFormData(record);
+                setIsOpenUpdateModal(true);
+              }}
+            >
+              Sửa
+            </Button>
+            {/* NÚT XOÁ  */}
             <Popconfirm
               title="Thực hiện xóa người dùng"
               description="Bạn có chắc muốn xóa người dùng không?"
@@ -88,46 +105,86 @@ const ManagerUser = () => {
                     handleNotification("error", err.response.data.content);
                   });
               }}
-              onCancel={() => { }}
+              onCancel={() => {}}
               okText="Yes"
               cancelText="No"
             >
-              <Button danger>Delete</Button>
+              <Button danger>Xoá</Button>
             </Popconfirm>
-            <Button className="border-yellow-500 text-yellow-500">Sửa</Button>
           </div>
         );
       },
     },
   ];
-  useEffect(() => { layDanhSachNguoiDung() 
-   
-  }, []);
+  console.log(formData);
   return (
-    <div className="space-y-3">
-      <h1 className="font-bold text-3xl">
-        Danh sách người dùng trong hệ thống
+    <div className="space-y-3 py-10 lg:py-0">
+      <h1 className="text-center font-bold text-2xl lg:text-3xl ">
+        Danh sách người dùng
       </h1>
-      <Button
-        onClick={() => {
-          setIsModalOpen(true);
+      <div className="flex justify-center">
+        <Button
+          onClick={() => {
+            setIsModalOpen(true);
+            setTitleModal("Thêm người dùng");
+            setFormData({
+              id: 0,
+              name: "",
+              email: "",
+              password: "",
+              phone: "",
+              birthday: "",
+              gender: "",
+              role: "",
+              skill: [],
+              certification: [],
+            });
+          }}
+          variant="solid"
+          className="bg-green-500 text-white hover:!bg-white hover:!text-green-500 hover:!border-green-500"
+          size="large"
+        >
+          Thêm người dùng
+        </Button>
+      </div>
+      <Table
+        dataSource={listNguoiDung}
+        columns={columns}
+        scroll={{ x: width > 1024 ? undefined : width }}
+      />
+      <Modal
+        onCancel={() => {
+          setIsModalOpen(false);
         }}
-        variant="solid"
-        className="bg-green-600 text-white"
-        size="large"
+        footer={null}
+        title="Thêm người dùng mới"
+        open={isModalOpen}
       >
-        Thêm người dùng
-      </Button>
-      <Table dataSource={listNguoiDung} columns={columns} />
-      <Modal onCancel={()=>{
-        setIsModalOpen(false);
-      }} footer={null} title="Thêm người dùng" open={isModalOpen}>
-        <FormAddUser handleCloseModal = {()=>{
-          setIsModalOpen(false)
-        }} layDanhSachNguoiDung = {layDanhSachNguoiDung}/>
+        <FormAddUser
+          handleCloseModal={() => {
+            setIsModalOpen(false);
+          }}
+          layDanhSachNguoiDung={layDanhSachNguoiDung}
+        />
+      </Modal>
+      <Modal
+        onCancel={() => {
+          setIsOpenUpdateModal(false);
+        }}
+        footer={null}
+        title="Cập nhật người dùng"
+        open={isOpenUpdateModal}
+      >
+        <FormUpdateUser
+          handleCloseModal={() => {
+            setIsOpenUpdateModal(false);
+          }}
+          layDanhSachNguoiDung={layDanhSachNguoiDung}
+          formData={formData}
+        />
       </Modal>
     </div>
   );
-}
+};
 
-export default ManagerUser
+export default ManagerUser;

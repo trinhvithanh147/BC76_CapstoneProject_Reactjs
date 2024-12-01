@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Icon from '../../../components/Icon'
 import { Link } from 'react-router-dom'
 const ItemMadeFiverr = ({ image, content, actor, order }) => {

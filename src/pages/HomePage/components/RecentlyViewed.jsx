@@ -30,17 +30,18 @@ const RecentlyViewed = () => {
   }, []);
 
   const settings = {
-    dots: false, // Hiển thị dấu chấm điều hướng
-    infinite: true, // Lặp lại các slides
-    speed: 500, // Tốc độ chuyển slide (ms)
-    slidesToShow: 5, // Số slides hiển thị cùng lúc
-    slidesToScroll: 1, // Số slides cuộn mỗi lần
-    autoplay: false, // Tự động chuyển slide
-    autoplaySpeed: 2000, // Thời gian giữa các lần chuyển slide (ms)
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
     arrows: true,
-    prevArrow: <CustomPrevArrow/>,
-    nextArrow: <CustomeNextArrow/>
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomeNextArrow />,
   };
+
 
   return (
     <section className="container py-[40px]">

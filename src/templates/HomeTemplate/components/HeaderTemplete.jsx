@@ -6,7 +6,7 @@ import {
   ButtonGhost,
   ButtonOutline,
 } from "../../../components/button/ButtonCustom";
-import { BarsOutlined, GlobalOutlined } from "@ant-design/icons";
+import { BarsOutlined, DownOutlined, DragOutlined, GlobalOutlined } from "@ant-design/icons";
 import InputSearch from "../../../components/input/inputSearch/InputSearch";
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
@@ -51,7 +51,20 @@ const HeaderTemplete = () => {
       navigate(`/search-job/${keyword}`);
     }
   };
-
+const items = [
+  {
+    label: <a href="#">{user? user.name: "USER"}</a>,
+    key: "0",
+  },
+  {
+    label: <a href="#" onClick={() => {
+          localStorage.removeItem("userInfo");
+          window.location.reload(); 
+          navigate(pathDefault.homePage);
+        }}>Đăng xuất </a>,
+    key: "1",
+  },
+];
   useEffect(() => {
     if (value) {
       congViecService
@@ -108,12 +121,17 @@ const HeaderTemplete = () => {
     <header className="sticky top-0 left-0 w-full z-50">
       <div className="bg-white py-4 border border-b-[e4e5e7] relative">
         <div className="header_content container flex items-center justify-between px-4 lg:px-0">
-          <div className="block lg:hidden" onClick={() => {
-            setIsOpenNavbar(!isOpenNavbar)
-          }}>
-            <BarsOutlined style={{
-              fontSize: "30px"
-            }} />
+          <div
+            className="block lg:hidden"
+            onClick={() => {
+              setIsOpenNavbar(!isOpenNavbar);
+            }}
+          >
+            <BarsOutlined
+              style={{
+                fontSize: "30px",
+              }}
+            />
           </div>
           <div className="flex lg:flex-1 space-x-2 items-center  ">
             {/* Logo */}
@@ -125,8 +143,9 @@ const HeaderTemplete = () => {
             </Link>
             {width > 576 && (
               <Dropdown
-                className={`${showInput ? "opacity-100 " : "opacity-0"
-                  }  transition-all duration-500 hidden lg:block`}
+                className={`${
+                  showInput ? "opacity-100 " : "opacity-0"
+                }  transition-all duration-500 hidden lg:block`}
                 trigger={["click"]}
                 overlayClassName="dropdown-suggest"
                 open={openDropdown}
@@ -211,7 +230,6 @@ const HeaderTemplete = () => {
                       </span>
                       <span className="text-sm">
                         Powered by AI, answered by Fiverr freelancers
-
                       </span>
                     </Link>
                   ),
@@ -296,8 +314,15 @@ const HeaderTemplete = () => {
                 },
               ]}
             />
-            <ButtonGhost className="hidden lg:block" content={"English"} icon={<GlobalOutlined />} />
-            <ButtonGhost className="hidden lg:block" content={"Become a Seller"} />
+            <ButtonGhost
+              className="hidden lg:block"
+              content={"English"}
+              icon={<GlobalOutlined />}
+            />
+            <ButtonGhost
+              className="hidden lg:block"
+              content={"Become a Seller"}
+            />
             {!user ? (
               <>
                 <ButtonGhost className="hidden lg:block" content={"SIgn In"} />
@@ -309,19 +334,29 @@ const HeaderTemplete = () => {
                 />
               </>
             ) : (
-              <p className="inline-block">{user.name}</p>
+              <div className="inline-block">
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                  trigger={["click"]}
+                >
+                  <a onClick={(e) => e.preventDefault()} className="cursor-pointer">
+                    Tài khoản
+                    <DownOutlined />
+                  </a>
+                </Dropdown>
+              </div>
             )}
           </div>
-
         </div>
-        <div className={`h-screen bg-white   w-2/3 absolute -translate-x-full ${isOpenNavbar ? "translate-x-0 " : ""}`}>
-
-        </div>
-
+        <div
+          className={`h-screen bg-white   w-2/3 absolute -translate-x-full ${
+            isOpenNavbar ? "translate-x-0 " : ""
+          }`}
+        ></div>
       </div>
-
     </header>
-
   );
 };
 

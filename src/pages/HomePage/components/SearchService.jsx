@@ -138,7 +138,7 @@ const SearchService = () => {
         </div>
       </section>
       <section className="container">
-        <div className="grid grid-cols-9 p-3 gap-3 ">
+        <div className="grid lg:grid-cols-9 grid-cols-3 p-3 gap-3 ">
           <MenuJob icon={<Icon.programming />} content={"Programming & Tech"} />
           <MenuJob icon={<Icon.graphic />} content={"Graphics & Design"} />
           <MenuJob icon={<Icon.digital />} content={"Digital Marketing"} />

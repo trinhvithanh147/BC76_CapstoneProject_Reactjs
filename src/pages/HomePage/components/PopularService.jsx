@@ -32,62 +32,62 @@ const PopularService = () => {
             <Slider {...popularServices}>
               <ItemPopularService
                 content={"Website Development"}
-                image={"./../../../../public/website-development.png"}
+                image={"/website-development.png"}
                 bgcolor={"#00732e"}
               />
               <ItemPopularService
                 content={"Logo Design"}
-                image={"./../../../../public/logo-design.png"}
+                image={"/logo-design.png"}
                 bgcolor={"#ff7640"}
               />
               <ItemPopularService
                 content={"SEO"}
-                image={"./../../../../public/seo.png"}
+                image={"/seo.png"}
                 bgcolor={"#003912"}
               />
               <ItemPopularService
                 content={"Architecture & Interior Design"}
-                image={"./../../../../public/architecture-design.png"}
+                image={"/architecture-design.png"}
                 bgcolor={"#4D1727"}
               />
               <ItemPopularService
                 content={"Social Media Marketing"}
-                image={"./../../../../public/social-media-marketing.png"}
+                image={"/social-media-marketing.png"}
                 bgcolor={"#687200"}
               />
               <ItemPopularService
                 content={"Voice Over"}
-                image={"./../../../../public/voice-over.png"}
+                image={"/voice-over.png"}
                 bgcolor={"#421300"}
               />
               <ItemPopularService
                 content={"UGC Videos"}
-                image={"./../../../../public/UGC Video img.png"}
+                image={"/UGC Video img.png"}
                 bgcolor={"#BE5272"}
               />
               <ItemPopularService
                 content={"Software Development"}
-                image={"./../../../../public/software-development.png"}
+                image={"/software-development.png"}
                 bgcolor={"#254200"}
               />
               <ItemPopularService
                 content={"Data Science & ML"}
-                image={"./../../../../public/data-science.png"}
+                image={"/data-science.png"}
                 bgcolor={"#8F2900"}
               />
               <ItemPopularService
                 content={"Product Photography"}
-                image={"./../../../../public/product-photography.png"}
+                image={"/product-photography.png"}
                 bgcolor={"#687200"}
               />
               <ItemPopularService
                 content={"E-Commerce Marketing"}
-                image={"./../../../../public/e-commerce.png"}
+                image={"/e-commerce.png"}
                 bgcolor={"#00732E"}
               />
               <ItemPopularService
                 content={"Video Editing"}
-                image={"./../../../../public/video-editing.png"}
+                image={"/video-editing.png"}
                 bgcolor={"#BE5272"}
               />
             </Slider>

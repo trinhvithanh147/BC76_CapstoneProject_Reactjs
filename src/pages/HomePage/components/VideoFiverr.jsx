@@ -46,7 +46,7 @@ const VideoFiverr = () => {
                 }}
               >
                 <img
-                  src="./../../../../public/3D-Industrial-Design_2x.png"
+                  src="/3D-Industrial-Design_2x.png"
                   alt=""
                 />
                 <p>3D Industrial Design</p>
@@ -61,7 +61,7 @@ const VideoFiverr = () => {
                 }}
               >
                 <img
-                  src="./../../../../public/E-commerce-Website-Development_2x.png"
+                  src="/E-commerce-Website-Development_2x.png"
                   alt=""
                 />
                 <p className="text-center">
@@ -78,7 +78,7 @@ const VideoFiverr = () => {
                     "0 0.14px 2.29266px rgba(0,0,0,0.032), 0 0.37px 4.42626px rgba(0,0,0,0.048), 0 3px 7px rgba(0,0,0,0.09)",
                 }}
               >
-                <img src="./../../../../public/Email-Marketing_2x.png" alt="" />
+                <img src="/Email-Marketing_2x.png" alt="" />
                 <p>Email Marketing</p>
               </Link>
             </div>
@@ -90,7 +90,7 @@ const VideoFiverr = () => {
                     "0 0.14px 2.29266px rgba(0,0,0,0.032), 0 0.37px 4.42626px rgba(0,0,0,0.048), 0 3px 7px rgba(0,0,0,0.09)",
                 }}
               >
-                <img src="./../../../../public/Press-Releases_2x.png" alt="" />
+                <img src="/Press-Releases_2x.png" alt="" />
                 <p>Press Releases</p>
               </Link>
             </div>
@@ -102,7 +102,7 @@ const VideoFiverr = () => {
                     "0 0.14px 2.29266px rgba(0,0,0,0.032), 0 0.37px 4.42626px rgba(0,0,0,0.048), 0 3px 7px rgba(0,0,0,0.09)",
                 }}
               >
-                <img src="./../../../../public/Logo-Design_2x.png" alt="" />
+                <img src="/Logo-Design_2x.png" alt="" />
                 <p>Logo Design</p>
               </Link>
             </div>

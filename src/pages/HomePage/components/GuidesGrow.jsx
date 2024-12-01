@@ -34,7 +34,7 @@ const GuidesGrow = () => {
                 <div className="mb-4 block overflow-hidden ">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../../public/side hustle.jpeg"
+                    src="/side hustle.jpeg"
                     alt=""
                   />
                 </div>
@@ -48,7 +48,7 @@ const GuidesGrow = () => {
                 <div className="mb-4 block overflow-hidden">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../../public/1685561103924-12profitableecommercebusinessideasyoucanstarttoday.jpg"
+                    src="/1685561103924-12profitableecommercebusinessideasyoucanstarttoday.jpg"
                     alt=""
                   />
                 </div>
@@ -62,7 +62,7 @@ const GuidesGrow = () => {
                 <div className="mb-4">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../../public/home based online business-fiverr.jpg"
+                    src="/home based online business-fiverr.jpg"
                     alt=""
                   />
                 </div>
@@ -76,7 +76,7 @@ const GuidesGrow = () => {
                 <div className="mb-4">
                   <img
                     className=" min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../..//1682363178357-Howtobuildawebsitefromscratch.jpg"
+                    src="/1682363178357-Howtobuildawebsitefromscratch.jpg"
                     alt=""
                   />
                 </div>
@@ -90,7 +90,7 @@ const GuidesGrow = () => {
                 <div className="mb-4">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../../public/05 - Article Cover.jpg"
+                    src="/05 - Article Cover.jpg"
                     alt=""
                   />
                 </div>
@@ -104,7 +104,7 @@ const GuidesGrow = () => {
                 <div className="mb-4">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
-                    src="./../../../../../public/business logo design-fiverr guide.jpg"
+                    src="/business logo design-fiverr guide.jpg"
                     alt=""
                   />
                 </div>

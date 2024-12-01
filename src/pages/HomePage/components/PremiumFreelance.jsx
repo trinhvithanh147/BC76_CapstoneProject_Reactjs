@@ -78,7 +78,7 @@ const PremiumFreelance = () => {
             <div className="col-span-6 h-full flex items-center justify-center  ">
               <span>
                 <img
-                  src="./../../../../public/fiverr-pro.png"
+                  src="/fiverr-pro.png"
                   alt=""
                   className="max-w-[603.95px] h-auto"
                 />

@@ -27,7 +27,7 @@ const TryFiverr = () => {
             </div>
             <div className="flex py-[48px] px-[80px] justify-center items-center flex-1">
               <img
-                src="./../../../../../public/logo-maker-lohp.png"
+                src="/logo-maker-lohp.png"
                 alt=""
                 className="w-full"
               />

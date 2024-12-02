@@ -1,6 +1,11 @@
-
-
 .dropdown-suggest_2 {
-  max-width: 616px;
-  min-width: unset !important;
+    max-width: 616px !important;
+    min-width: unset !important;
+  
+}
+@media screen and (max-width: 768px) {
+  .dropdown-suggest_2 {
+    max-width: 328px !important; 
+    z-index: 99;
+  }
 }

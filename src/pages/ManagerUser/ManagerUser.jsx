@@ -118,7 +118,7 @@ const ManagerUser = () => {
   ];
   console.log(formData);
   return (
-    <div className="space-y-3 py-10 lg:py-0">
+    <div className="space-y-3 py-10 lg:py-0 min-h-screen">
       <h1 className="text-center font-bold text-2xl lg:text-3xl ">
         Danh sách người dùng
       </h1>

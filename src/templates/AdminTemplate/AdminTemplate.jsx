@@ -64,7 +64,7 @@ const AdminTemplate = () => {
                 collapsed ? "hidden" : "block"
               }`}
             >
-              <NavLink to={pathDefault.homePage}>
+              <NavLink>
                 <Icon.logo fill="white" />
               </NavLink>
             </div>

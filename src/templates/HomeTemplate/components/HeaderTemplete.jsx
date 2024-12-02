@@ -793,7 +793,7 @@ const items = [
             </div>
           </div>
         </div>
-        <div className={`min-h-screen  w-full z-10  lg:hidden xl:hidden mt-4 block  transition-colors duration-1000 bg-black/10   md:w-1/3 absolute right-0   shadow-2xl ${
+        <div className={`min-h-screen  w-full z-10  lg:hidden xl:hidden mt-4 block  transition-colors duration-1000 bg-black/10   w-2/3 absolute right-0   shadow-2xl ${
             isOpenNavbar ? "block" : "hidden" 
           }`} onClick={()=>{
             setIsOpenNavbar(!isOpenNavbar)

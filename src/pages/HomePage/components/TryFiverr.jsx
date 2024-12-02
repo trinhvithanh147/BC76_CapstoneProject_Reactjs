@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const TryFiverr = () => {
     return (
-      <section className="container overflow-hidden lg:px-0 px-6">
+      <section className="container overflow-hidden xl:px-0 lg:px-8  px-6">
         <div className="py-10">
           <div className="flex rounded-xl bg-[#fff6f2] lg:flex-row flex-col py-10 lg:gap-0 gap-10">
-            <div className="lg:py-[56px] lg:px-[80px] flex lg:gap-10 gap-4 flex-col flex-1 lg:order-1 order-2  px-[24px]">
+            <div className="lg:py-[56px] xl:px-[80px] flex lg:gap-10 gap-4 flex-col flex-1 lg:order-1 order-2  px-[24px] lg:px-[40px]">
               <small>
                 <Icon.fiverlogomaker />
               </small>
-              <h2 className="lg:text-[48px] text-[32px]  leading-[100%] font-normal tracking-[-.96px]">
+              <h2 className="xl:text-[48px] lg:text-[40px] text-[32px]  leading-[100%] font-normal tracking-[-.96px]">
                 Make an incredible
                 <br />
                 logo <span className="text-[#fc832b]">in seconds</span>

@@ -45,7 +45,7 @@ const RecentlyViewed = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -68,7 +68,7 @@ const RecentlyViewed = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          
         },
       },
     ],
@@ -77,10 +77,10 @@ const RecentlyViewed = () => {
 
 
   return (
-    <section className="container py-[40px] overflow-hidden lg:px-0 px-6">
+    <section className="container py-[40px]  xl:px-0 lg:px-8  px-6">
       <div className="titles pb-6">
         <div className="title">
-          <h4 className="inline-block text-[48px] leading-[105%] max-w-[720px] tracking-[-1.44px] font-normal text-[#404145]">
+          <h4 className="inline-block lg:text-[48px] lg:leading-[105%] lg:max-w-[720px] lg:tracking-[-1.44px] text-[31px] tracking-[-.96px] leading-[38px] font-normal text-[#404145]">
             Recently Viewed & More
           </h4>
         </div>

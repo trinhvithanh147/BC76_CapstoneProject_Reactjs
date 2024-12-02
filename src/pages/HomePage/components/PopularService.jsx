@@ -36,7 +36,7 @@ const PopularService = () => {
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 4,
             slidesToScroll: 1,
           },
         },
@@ -51,10 +51,10 @@ const PopularService = () => {
       ],
     };
     return (
-      <section className="container py-[40px] lg:px-0 px-6 ">
+      <section className="container py-[40px] xl:px-0 lg:px-8  px-6 ">
         <div className="flex flex-col gap-8 ">
           <div className="title">
-            <h2 className="text-[48px] leading-[105%] max-w-[720px] text-[#404145] font-normal">
+            <h2 className="lg:text-[48px] lg:leading-[105%] lg:max-w-[720px] text-[32px] tracking-[-.96px] leandig-[38px]   text-[#404145] font-normal">
               Popular services
             </h2>
           </div>

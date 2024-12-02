@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Fingertips = () => {
   return (
-    <section className="container overflow-hidden lg:px-0 px-6">
+    <section className="container overflow-hidden xl:px-0 lg:px-8  px-6">
       <div className="py-10 flex items-center gap-16 flex-col ">
         <div className="flex items-center flex-col gap-10 rounded-xl lg:py-[48px]  lg:px-0 bg-[#4d1727] w-full py-[40px] px-[24px]">
           <h2 className="text-white tracking-[-1.28px] lg:text-[64px] text-[40px]  leading-[38px] lg:leading-[64px]  text-center font-normal ">

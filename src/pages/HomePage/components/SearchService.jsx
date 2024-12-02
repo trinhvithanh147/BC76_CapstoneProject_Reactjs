@@ -76,11 +76,11 @@ const SearchService = () => {
   }, [listSearch]);
   return (
     <>
-      <section className="overflow-hidden ">
+      <section className="overflow-hidden xl:px-0 lg:px-8 p-0 md:px-6">
         <div className="container mb-4">
-          <div className="searchService_item lg:flex justify-center items-center flex-col w-full h-full relative lg:p-0 py-10 px-5 bg-custom-gradient">
+          <div className="searchService_item   lg:flex justify-center items-center flex-col w-full h-full relative lg:p-0 py-10 px-5 bg-custom-gradient lg:h-[500px] lg:bg-hero-mobile lg:bg-cover lg:rounded-2xl">
             <div className="searchSerice_search flex justify-center items-center flex-col gap-10">
-              <h1 className="text-white text-center lg:font-normal lg:text-[60px] lg:tracking-[-.02em] text-[32px] lg:max-w-[800px] lg:leading-[69px] leading-[35.2px] max-w-[328px]   tracking-[-.04em]">
+              <h1 className="text-white lg:text-center text-center font-normal lg:text-[60px] lg:tracking-[-.02em] text-[32px] lg:max-w-[800px] lg:leading-[69px] leading-[35.2px] max-w-[320px]   tracking-[-.04em]">
                 Scale your professional workforce with freelancers
               </h1>
               <div className="searchService_info ">
@@ -135,8 +135,8 @@ const SearchService = () => {
           </div>
         </div>
       </section>
-      <section className="container overflow-hidden lg:px-0 px-6">
-        <div className="grid lg:grid-cols-9 grid-cols-3 lg:p-3 lg:gap-3 gap-2 ">
+      <section className="container overflow-hidden xl:px-0 lg:px-8 px-[24px] md:px-6">
+        <div className="grid xl:grid-cols-9 lg:grid-cols-6 grid-cols-3 md:grid-cols-4 lg:p-3 lg:gap-3 gap-2 ">
           <MenuJob icon={<Icon.programming />} content={"Programming & Tech"} />
           <MenuJob icon={<Icon.graphic />} content={"Graphics & Design"} />
           <MenuJob icon={<Icon.digital />} content={"Digital Marketing"} />

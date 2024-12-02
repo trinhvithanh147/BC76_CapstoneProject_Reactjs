@@ -131,9 +131,9 @@ const items = [
   }, [listSearch]);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-50">
+    <header className="sticky top-0 left-0 w-full z-50 xl:px-0 lg:px-8 p-0 md:px-0">
       <div className="bg-white py-4 border border-b-[e4e5e7] relative">
-        <div className="header_content container flex items-center justify-between px-4 lg:px-0">
+        <div className="header_content container flex items-center justify-between px-[24px] lg:px-0">
           <span
             className="inline-block lg:hidden pt-2"
             onClick={() => {
@@ -358,7 +358,6 @@ const items = [
                     onClick={(e) => e.preventDefault()}
                     className="cursor-pointer text-[16px] text-[#62646a] font-semibold py-2 px-4"
                   >
-                    
                     Account
                     <DownOutlined />
                   </a>
@@ -368,10 +367,431 @@ const items = [
           </div>
         </div>
         <div
-          className={`h-screen bg-white   w-2/3 absolute -translate-x-full ${
-            isOpenNavbar ? "translate-x-0 " : ""
+          className={`h-screen bg-white lg:hidden xl:hidden z-auto transition-all duration-500  md:w-1/3 w-2/3 absolute -translate-x-full shadow-2xl ${
+            isOpenNavbar ? "-translate-x-1" : ""
           }`}
-        ></div>
+        >
+          <div className=" py-[26px] px-[16px]">
+            <div className="flex flex-col items-start w-full">
+              {!user ? (
+                <>
+                  <ButtonOutline
+                    onClick={() => {
+                      navigate(pathDefault.signIn);
+                    }}
+                    className="bg-black text-white border-transparent px-6 py-2 mb-4 "
+                    content={"JoIn Fiverr"}
+                  />
+                  <ButtonGhost
+                    className="px-0 font-semibold text-[#404145] block"
+                    content={"SIgn In"}
+                  />
+                </>
+              ) : (
+                <div className="inline-block">
+                  <Dropdown
+                    menu={{
+                      items,
+                    }}
+                    trigger={["click"]}
+                  >
+                    <a
+                      onClick={(e) => e.preventDefault()}
+                      className="cursor-pointer text-[16px] text-[#62646a] font-semibold py-2 px-4"
+                    >
+                      Account
+                      <DownOutlined />
+                    </a>
+                  </Dropdown>
+                </div>
+              )}
+              <DropdownHeader
+                className={"px-0"}
+                width={"220px"}
+                buttonContent="Browse categories"
+                item={[
+                  {
+                    key: 1,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Graphics & Design
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 2,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Programming & Tech
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 3,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Digital Marketing
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 4,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Video & Animation
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 5,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Writing & Translation
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 6,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Music & Audio
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 7,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Business
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 8,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Fianance
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 7,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Business
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 8,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          AI Services
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 9,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Personal Growth
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 10,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Consulting
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 10,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Photogarphy
+                        </span>
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+              <DropdownHeader
+                className={"px-0"}
+                width={"220px"}
+                buttonContent="Explore"
+                item={[
+                  {
+                    key: 1,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Answers
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 2,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Guides
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 3,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Learn
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 4,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Logo Maker
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 5,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Community
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 6,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Podcast
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 7,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Blog
+                        </span>
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+              <DropdownHeader
+                className={"px-0"}
+                width={"220px"}
+                buttonContent="Fiverr Pro"
+                item={[
+                  {
+                    key: 1,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          I'm looking to hire
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 2,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          I want to offer Pro services
+                        </span>
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+              <div className="menu_header pt-7 pb-2">
+                <h6 className="font-semibold text-lg">General</h6>
+              </div>
+              <Link className="py-2 font-semibold capitalizex duration-200 rounded-md">
+                Home
+              </Link>
+              <DropdownHeader
+                className={"px-0"}
+                width={"220px"}
+                buttonContent={"English"}
+                item={[
+                  {
+                    key: 1,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Deutsch
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 2,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Italiano
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 3,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Nederlands
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 4,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Espanol
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 5,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Português
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 6,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          Français
+                        </span>
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+              <DropdownHeader
+                className={"px-0"}
+                width={"220px"}
+                buttonContent={"US$ USD"}
+                item={[
+                  {
+                    key: 1,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          USD - US$
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 2,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          EUR - €
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 3,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          GBP - £
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 4,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          ILS - ₪
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 5,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          THB - THB
+                        </span>
+                      </Link>
+                    ),
+                  },
+                  {
+                    key: 6,
+                    label: (
+                      <Link>
+                        <span className="font-semibold text-[#404145] block">
+                          AED - AED
+                        </span>
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+              <Link className="py-2 font-semibold capitalizex duration-200 rounded-md">
+                Open in the App
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

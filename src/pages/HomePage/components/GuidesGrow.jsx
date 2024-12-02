@@ -21,15 +21,17 @@ const GuidesGrow = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
@@ -37,6 +39,7 @@ const GuidesGrow = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: true,
         },
       },
       {
@@ -50,7 +53,7 @@ const GuidesGrow = () => {
     ],
   };
   return (
-    <section className="container overflow-hidden lg:px-0 px-6">
+    <section className="container  xl:px-0 lg:px-8  px-6">
       <div className="py-10">
         <div className="flex items-end justify-between">
           <h2 className="text-[48px] tracking-[-1.44px] leading-[105%] max-w-[720px]">
@@ -64,7 +67,7 @@ const GuidesGrow = () => {
           <Slider {...guidesSlide}>
             <div>
               <Link className="guide_item">
-                <div className="mb-4 block overflow-hidden ">
+                <div className="mb-4 block  ">
                   <img
                     className="min-w-[100%] min-h-[319.19px] rounded object-cover w-full"
                     src="/side hustle.jpeg"

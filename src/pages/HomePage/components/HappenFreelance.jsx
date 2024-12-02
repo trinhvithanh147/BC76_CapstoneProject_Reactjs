@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const HappenFreelance = () => {
   return (
-    <section className="container lg:px-0 px-6">
+    <section className="container overflow-hidden xl:px-0 lg:px-8  px-6">
       <div className="py-[40px]">
         <h2 className="text-[40px] leading-[48px] mb-[64px] tracking-[-0.03em]">
           Make it all happen with freelancers
         </h2>
-        <div className="grid lg:grid-cols-12 gap-[40px]  mb-[64px]">
+        <div className="grid lg:grid-cols-12  gap-[40px]  mb-[64px]">
           <div className="col-span-3 flex items-start lg:flex-col flex-row lg:gap-3">
             <Icon.categories />
             <p className="w-[232px]">

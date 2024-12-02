@@ -6,7 +6,7 @@ import { GlobalOutlined, GoldOutlined } from "@ant-design/icons";
 
 const FooterTemplete = () => {
   return (
-    <footer className="bg-white overflow-hidden lg:px-0 px-6">
+    <footer className="bg-white overflow-hidden xl:px-0 lg:px-8 px-[24px] md:px-6">
       <div className="container ">
         <div className="pt-[64px] pb-[24px] ">
           <div className="grid lg:grid-cols-5 grid-cols-1 footer_main mb-2">
@@ -385,39 +385,39 @@ const FooterTemplete = () => {
                 <Icon.fiverFooter />
               </span>
               <p>
-                <span className="ml-6 text-sm text-[#b5b6ba]">
+                <span className="lg:ml-6 text-sm text-[#b5b6ba]">
                   © Fiverr International Ltd. 2024
                 </span>
               </p>
             </div>
-            <div className="right flex items-center lg:justify-between flex-col lg:flex-row justify-center pt-[16px]  w-auto">
-              <ul className="social flex items-center justify-center  w-auto lg:pr-8 list-none pr-0">
-                <li className="mr-6 p-0">
+            <div className="right flex items-center lg:justify-between flex-col lg:flex-row justify-center pt-[16px] lg:w-auto w-full">
+              <ul className="social flex items-center justify-center  w-auto lg:pr-8 list-none pr-0 lg:gap-5 gap-8 mb-2">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.tiktok />
                   </Link>
                 </li>
-                <li className="mr-6 p-0">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.instagram />
                   </Link>
                 </li>
-                <li className="mr-6 p-0">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.in />
                   </Link>
                 </li>
-                <li className="mr-6 p-0">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.facebook />
                   </Link>
                 </li>
-                <li className="mr-6 p-0">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.pinterest />
                   </Link>
                 </li>
-                <li className="mr-6 p-0">
+                <li className=" p-0">
                   <Link className="flex hover:bg-[#efeff0] rounded-[50%] p-2 m-[-8px] hover:transition-color duration-200">
                     <Icon.twitter />
                   </Link>

@@ -3,19 +3,19 @@ import ItemMadeFiverr from './ItemMadeFiverr'
 
 const MadeFiverr = () => {
     return (
-      <section className="container overflow-hidden lg:px-0 px-6">
+      <section className="container overflow-hidden xl:px-0 lg:px-8  px-6">
         <div className="py-10 flex flex-col gap-10">
           <h2 className="text-[48px] leading-[105%] tracking-[-1,44px] max-w-[720px]">
             Made on Fiverr
           </h2>
           <div>
             <div>
-              <div className="flex h-[1240px] w-full items-start  content-start flex-col  flex-wrap overflow-hidden">
+              <div className="flex w-full min-h-[1240px] md:h-[2392px] h-[1248px] lg:h-[758px] items-start content-start flex-col flex-wrap  overflow-hidden ">
                 <ItemMadeFiverr
                   image={"/LIVING_3.jpg"}
-                  order={1}
                   content={"Architecture & Interior Design"}
                   actor={"pintalsari"}
+                  order={1}
                 />
                 <ItemMadeFiverr
                   image={"/1.jpg"}

@@ -18,14 +18,49 @@ const DetailProduct = () => {
     };
 
     const slideProduct = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 2000,
-        prevArrow: <CustomPrevArrow />,
-        nextArrow: <CustomeNextArrow />,
+      dots: false, // Hiển thị dấu chấm điều hướng
+      infinite: true, // Lặp lại các slides
+      speed: 500, // Tốc độ chuyển slide (ms)
+      slidesToShow: 3, // Số slides hiển thị cùng lúc
+      slidesToScroll: 1, // Số slides cuộn mỗi lần
+      autoplay: false, // Tự động chuyển slide
+      autoplaySpeed: 2000, // Thời gian giữa các lần chuyển slide (ms)
+      prevArrow: <CustomPrevArrow />,
+      nextArrow: <CustomeNextArrow />,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+      ],
     };
     const [detailJobId, setDetailJobId] = useState([])
     const [jobRelated, setJobRelated] = useState([])
@@ -64,8 +99,8 @@ const DetailProduct = () => {
     }, [param.id]);
     return (
       <section className="container">
-        <div className=" flex items-start flex-row pt-[32px] px-[24px] pb-10">
-          <div className="w-[33.6%] order-2 sticky top-0 left-0">
+        <div className=" flex lg:flex-row flex-col pt-[32px] px-[24px] pb-10">
+          <div className="lg:w-[33.6%] w-[100%]  order-2 sticky top-0 left-0">
             <div className="sidebar_content mb-4 ">
               <div className="mb-4 pb-3">
                 <div className="flex justify-end items-center gap-3">
@@ -84,7 +119,7 @@ const DetailProduct = () => {
                   </div>
                 </div>
               </div>
-              <div className="basic border-[#dadbdd] border">
+              <div className="basic hidden lg:block md:block border-[#dadbdd] border">
                 <div className="text-center py-4 border-b-[#222325] border-b-[3px] border-b-solid">
                   <h1 className="   font-bold bg-white border-x-0 border-t-0 text-[16px] cursor-pointer">
                     Basic
@@ -138,7 +173,7 @@ const DetailProduct = () => {
               </div>
             </div>
           </div>
-          <div className="main w-[57.42%] mr-[9.15%] order-1">
+          <div className="main lg:w-[57.42%] w-[100%] mr-[9.15%] order-1">
             <div className="mb-[28px] pt-[6px]">
               <Link
                 to={"/"}
@@ -186,6 +221,53 @@ const DetailProduct = () => {
                 alt=""
                 className="w-full h-full min-h-[140px] min-w-[140px] object-contain max-h-[full] max-w-[full] hover:scale-[1.04] rounded-2xl"
               />
+            </div>
+            <div className="basic lg:hidden  block mb-5 border-[#dadbdd] border">
+              <div className="text-center py-4 border-b-[#222325] border-b-[3px] border-b-solid">
+                <h1 className="   font-bold bg-white border-x-0 border-t-0 text-[16px] cursor-pointer">
+                  Basic
+                </h1>
+              </div>
+              <div className="pt-[32px] ">
+                <div className="px-[32px]">
+                  <div className="leading-[21px] pb-[10px]">
+                    <div className="flex justify-between flex-row text-[24px] leading-[130%] text-[#404145] font-bold">
+                      <div className="flex items-start flex-col">
+                        <span className="price">
+                          US${detailJobId[0]?.congViec.giaTien}
+                        </span>
+                        <div className="flex gap-2 mt-[2px] font-normal text-[16px] leading-[24px] items-center">
+                          <span className="font-semibold leading-[24px] text-[16px]">
+                            Save up to 20% with{" "}
+                            <span className="text-[#026a5d] font-semibold">
+                              Subscribe to Save
+                            </span>
+                          </span>
+                          <div className="flex">
+                            <Icon.chamHoi />
+                          </div>
+                        </div>
+                        <div className="mb-[10px] mt-7">
+                          <p className="text-[16px] leading-[21px] font-normal text-[#62646a]">
+                            {detailJobId[0]?.congViec.moTaNgan}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col px-[24px] pb-[20px] text-[#404145] justify-between w-full leading-[100%]">
+                  <Link className="py-[12px] hover:bg-[#404145] transition-all duration-75 relative px-[24px] font-semibold text-[16px] inline-block rounded-[4px] border border-solid border-transparent text-center bg-black text-white ">
+                    Continue
+                    <span className="inline-block float-right fill-white w-[16px] h-[16px]">
+                      <Icon.arrowRight />
+                    </span>
+                  </Link>
+                  <Link className="flex justify-center font-normal items-center text-[#222325] pt-[12px] text-[14px] leading-[21px]">
+                    Compare packages
+                  </Link>
+                </div>
+              </div>
             </div>
             <div>
               <h1 className="pb-[25px] text-[20px] leading-[28px] font-bold">

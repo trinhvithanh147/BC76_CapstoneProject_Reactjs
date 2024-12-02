@@ -5,10 +5,10 @@ import { Button } from 'antd';
 
 const PremiumFreelance = () => {
     return (
-      <section className="container overflow-hidden lg:px-0 px-6">
+      <section className="container overflow-hidden xl:px-0 lg:px-8  px-6">
         <div className="  bg-[#e8faf4] rounded-2xl lg:py-[56px] lg:pl-[80px] lg:pr-[32px] px-[24px] py-[32px] ">
           <div className="grid grid-cols-12 items-start flex-col">
-            <div className="lg:col-span-6 col-span-12  ">
+            <div className="xl:col-span-6 col-span-12  ">
               <div className="mb-[32px]">
                 <Icon.fiverr_pro />
               </div>
@@ -75,7 +75,7 @@ const PremiumFreelance = () => {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-6 col-span-12  h-full flex items-center justify-center  hidden lg:block">
+            <div className="xl:col-span-6 col-span-12  h-full lg:hidden xl:flex items-center justify-center  hidden">
               <span>
                 <img
                   src="/fiverr-pro.png"

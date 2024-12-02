@@ -24,7 +24,9 @@ export default {
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(180deg, #003912 36.72%, #19aa64 141.43%)",
+        "hero-mobile": "url('/hero-xl-x1.webp')",
       },
+    
     },
     container: {
       center: true,

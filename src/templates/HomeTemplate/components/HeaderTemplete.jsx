@@ -367,11 +367,12 @@ const items = [
           </div>
         </div>
         <div
-          className={`h-screen bg-white lg:hidden xl:hidden block z-auto transition-all duration-500  md:w-1/3 w-2/3 absolute -translate-x-full shadow-2xl ${
+          className={`min-h-screen bg-white lg:hidden z-20 xl:hidden mt-4 block  transition-all duration-500  md:w-1/3 w-2/3 absolute -translate-x-full shadow-2xl ${
             isOpenNavbar ? "translate-x-[-1px]" : ""
           }`}
         >
-          <div className=" py-[26px] px-[16px]">
+          
+          <div className=" py-[24px] px-[16px]">
             <div className="flex flex-col items-start w-full">
               {!user ? (
                 <>
@@ -791,6 +792,13 @@ const items = [
               </Link>
             </div>
           </div>
+        </div>
+        <div className={`min-h-screen  w-full z-10  lg:hidden xl:hidden mt-4 block  transition-colors duration-1000 bg-black/10   md:w-1/3 absolute right-0   shadow-2xl ${
+            isOpenNavbar ? "block" : "hidden" 
+          }`} onClick={()=>{
+            setIsOpenNavbar(!isOpenNavbar)
+          }}>
+            
         </div>
       </div>
     </header>

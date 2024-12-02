@@ -16,19 +16,20 @@
         @apply text-white bg-slate-500;
       }
     }
-    .ant-menu-item-active{
-        background-color: unset !important;
-        a{
-            @apply text-white bg-slate-500;
-            color: white;
-        }
-        
-    .ant-menu-item-selected {
+    .ant-menu-item-active {
       background-color: unset !important;
+      a {
+        @apply text-white bg-slate-500;
+        color: white;
+      }
+
+      .ant-menu-item-selected {
+        background-color: unset !important;
+      }
     }
-  }
-  .item-active {
-    background-color: #1677ff !important;
+    .item-active {
+      background-color: #1677ff !important;
+    }
   }
 }
 
@@ -46,5 +47,4 @@
   max-width: 80px !important;
   min-width: 80px !important;
   width: 80px !important;
-}
 }

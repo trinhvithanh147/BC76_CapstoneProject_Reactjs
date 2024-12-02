@@ -11,9 +11,21 @@ import { authService } from "../../services/auth.service";
 import { NotificationContext } from "../../App";
 import { useDispatch } from "react-redux";
 import useViewPort from "../../hooks/useViewPort";
+import { useEffect } from "react";
 const AdminLogin = () => {
   const { width } = useViewPort();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const dataString = localStorage.getItem("userInfo"); //string | null
+    if (dataString) {
+      const data = JSON.parse(dataString);
+      if (data.user.role == "ADMIN") {
+        window.location.href = pathDefault.admin;
+      }
+    }
+  }, []);
+
   const dispatch = useDispatch();
   const handleNotification = useContext(NotificationContext);
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =

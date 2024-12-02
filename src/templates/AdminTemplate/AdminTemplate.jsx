@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./adminTemplate.scss";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -15,6 +14,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { pathDefault } from "../../common/path";
 import useViewPort from "../../hooks/useViewPort";
 import HeaderAdminTemplate from "./components/HeaderAdminTemplate";
+import "./adminTemplate.scss";
 
 const AdminTemplate = () => {
   const { width } = useViewPort();
@@ -57,7 +57,7 @@ const AdminTemplate = () => {
             trigger={null}
             collapsible
             collapsed={collapsed}
-            className="pt-5 px-4  sider-content"
+            className="pt-5 px-4 sider-content"
           >
             <div
               className={`demo-logo-vertical flex items-center justify-center p-2 mb-4 ${

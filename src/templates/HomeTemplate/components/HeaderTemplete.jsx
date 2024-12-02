@@ -397,7 +397,7 @@ const items = [
                   >
                     <a
                       onClick={(e) => e.preventDefault()}
-                      className="cursor-pointer text-[16px] text-[#62646a] font-semibold py-2 px-4"
+                      className="cursor-pointer text-[16px] text-black font-semibold py-2 "
                     >
                       Account
                       <DownOutlined />

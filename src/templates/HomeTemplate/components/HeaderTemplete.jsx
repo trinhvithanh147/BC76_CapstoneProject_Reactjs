@@ -367,8 +367,8 @@ const items = [
           </div>
         </div>
         <div
-          className={`h-screen bg-white lg:hidden xl:hidden z-auto transition-all duration-500  md:w-1/3 w-2/3 absolute -translate-x-full shadow-2xl ${
-            isOpenNavbar ? "-translate-x-1" : ""
+          className={`h-screen bg-white lg:hidden xl:hidden block z-auto transition-all duration-500  md:w-1/3 w-2/3 absolute -translate-x-full shadow-2xl ${
+            isOpenNavbar ? "translate-x-[-1px]" : ""
           }`}
         >
           <div className=" py-[26px] px-[16px]">
@@ -383,7 +383,7 @@ const items = [
                     content={"JoIn Fiverr"}
                   />
                   <ButtonGhost
-                    className="px-0 font-semibold text-[#404145] block"
+                    className="!px-0 font-semibold capitalize text-black block"
                     content={"SIgn In"}
                   />
                 </>
@@ -406,7 +406,7 @@ const items = [
                 </div>
               )}
               <DropdownHeader
-                className={"px-0"}
+                className={"!px-0"}
                 width={"220px"}
                 buttonContent="Browse categories"
                 item={[
@@ -543,7 +543,7 @@ const items = [
                 ]}
               />
               <DropdownHeader
-                className={"px-0"}
+                className={"!px-0"}
                 width={"220px"}
                 buttonContent="Explore"
                 item={[
@@ -620,7 +620,7 @@ const items = [
                 ]}
               />
               <DropdownHeader
-                className={"px-0"}
+                className={"!px-0"}
                 width={"220px"}
                 buttonContent="Fiverr Pro"
                 item={[
@@ -653,7 +653,7 @@ const items = [
                 Home
               </Link>
               <DropdownHeader
-                className={"px-0"}
+                className={"!px-0"}
                 width={"220px"}
                 buttonContent={"English"}
                 item={[
@@ -720,7 +720,7 @@ const items = [
                 ]}
               />
               <DropdownHeader
-                className={"px-0"}
+                className={"!px-0"}
                 width={"220px"}
                 buttonContent={"US$ USD"}
                 item={[

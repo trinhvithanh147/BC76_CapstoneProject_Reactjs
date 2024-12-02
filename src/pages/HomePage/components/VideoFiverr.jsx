@@ -31,7 +31,7 @@ const VideoFiverr = () => {
           </div>
         </div>
       </section>
-      <div className="container lg:px-0 px-6 ">
+      <div className="container lg:px-[32px] xl:px-0 px-6 ">
         <h3 className="text-[28px] mb-[32px] text-[#222325] leading-[36px] font-normal">
           Vontélle's go-to services
         </h3>

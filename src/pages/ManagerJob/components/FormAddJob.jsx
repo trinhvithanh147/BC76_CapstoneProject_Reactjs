@@ -9,8 +9,12 @@ import { useFormik } from "formik";
 import { useSelector } from "react-redux";
 import TextAreaCustom from "../../../components/input/textareaCustom/TextAreaCustom";
 import { congViecService } from "../../../services/congViec.service";
+import { useContext } from "react";
+import { NotificationContext } from "../../../App";
+import * as Yup from "yup";
 
 const FormAddJob = ({ layDanhSachCongViec, setIsModalOpen }) => {
+  const handleNotification = useContext(NotificationContext);
   const [listMaChiTietLoaiCongViec, setListMaChiTietLoaiCongViec] = useState(
     []
   );
@@ -35,7 +39,7 @@ const FormAddJob = ({ layDanhSachCongViec, setIsModalOpen }) => {
       nguoiTao: dataUser.user.id,
       hinhAnh: "",
       moTa: "",
-      maChiTietLoaiCongViec: null,
+      maChiTietLoaiCongViec: "",
       moTaNgan: "",
       saoCongViec: null,
     },
@@ -45,6 +49,8 @@ const FormAddJob = ({ layDanhSachCongViec, setIsModalOpen }) => {
         .themCongViec(values, tokenUser)
         .then((res) => {
           console.log(res);
+          handleNotification("success", "Thêm mới thành công");
+          layDanhSachCongViec();
         })
         .catch((err) => {
           console.log(err);
@@ -53,6 +59,16 @@ const FormAddJob = ({ layDanhSachCongViec, setIsModalOpen }) => {
       resetForm();
       setIsModalOpen(false);
     },
+    validationSchema: Yup.object({
+      tenCongViec: Yup.string().required("Vui lòng không bỏ trống"),
+      danhGia: Yup.string().required("Vui lòng không bỏ trống"),
+      giaTien: Yup.number().required("Vui lòng không bỏ trống"),
+      hinhAnh: Yup.string().required("Vui lòng không bỏ trống"),
+      moTa: Yup.string().required("Vui lòng không bỏ trống"),
+      maChiTietLoaiCongViec: Yup.string().required("Vui lòng không bỏ trống"),
+      moTaNgan: Yup.string().required("Vui lòng không bỏ trống"),
+      saoCongViec: Yup.number().required("Vui lòng không bỏ trống"),
+    }),
   });
 
   useEffect(() => {
@@ -167,6 +183,9 @@ const FormAddJob = ({ layDanhSachCongViec, setIsModalOpen }) => {
           handleChange={(value, option) => {
             setFieldValue("maChiTietLoaiCongViec", value);
           }}
+          value={values.maChiTietLoaiCongViec}
+          touched={touched.maChiTietLoaiCongViec}
+          error={errors.maChiTietLoaiCongViec}
         />
       </div>
       <div className="flex justify-end">

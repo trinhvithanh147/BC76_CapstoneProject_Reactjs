@@ -30,6 +30,7 @@ const TextAreaCustom = ({
         value={value}
         type={type}
       />
+      {touched && error ? <p className="text-red-500 mt-1">{error}</p> : null}
     </div>
   );
 };

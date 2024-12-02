@@ -97,7 +97,7 @@ const ManagerJob = () => {
 
   return (
     <>
-      <div className="space-y-3 py-10 lg:py-0">
+      <div className="space-y-3 py-10 lg:py-0 min-h-screen">
         <h1 className="px-4 lg:px-0 font-bold text-2xl lg:text-3xl text-center">
           Danh sách công việc
         </h1>
